@@ -9,69 +9,56 @@
 @font-face{font-family:'Mano';src:url(fonts/mano.woff2) format('woff2'),url(fonts/mano.woff) format('woff')}
 @font-face{font-family:'Elite';src:url(fonts/elite.woff2) format('woff2'),url(fonts/elite.woff) format('woff')}
 *{margin:0;padding:0;-webkit-box-sizing:border-box;box-sizing:border-box}
-body{background:#5d5a52;min-height:100vh;font-family:'Mano','Comic Sans MS',cursive;color:#ece6d4;
- background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),radial-gradient(ellipse at 30% 15%,rgba(255,255,240,.18),transparent 60%),radial-gradient(ellipse at 80% 95%,rgba(0,0,0,.45),transparent 60%),linear-gradient(180deg,#6b675e,#4a4740)}
-.wall{max-width:700px;margin:0 auto;padding:24px 24px 30px;position:relative}
-.drip{position:absolute;top:0;left:0;right:0;height:10px;background:linear-gradient(#2a2622,transparent)}
-.tit{font-family:'Marker',Impact,sans-serif;font-size:46px;color:#9e1b12;-webkit-transform:rotate(-2deg);transform:rotate(-2deg);text-shadow:2px 2px 0 rgba(0,0,0,.18);letter-spacing:1px;line-height:1}
-.sub{font-family:'Elite',monospace;font-size:13px;color:#ece6d4;letter-spacing:5px;margin:14px 0 2px 6px;opacity:.85;-webkit-transform:rotate(1deg);transform:rotate(1deg)}
-.hint{font-family:'Mano';font-size:19px;color:#ffd23a;margin:6px 0 0 40px;-webkit-transform:rotate(-3deg);transform:rotate(-3deg)}
+html,body{height:100%}
+body{background:#55524b;font-family:'Mano','Segoe Print','Comic Sans MS',cursive;color:#f4f1e8;overflow-x:hidden;
+ background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),radial-gradient(ellipse at 30% 15%,rgba(255,255,240,.14),transparent 60%),radial-gradient(ellipse at 80% 95%,rgba(0,0,0,.45),transparent 60%),linear-gradient(180deg,#625e55,#45423b);background-attachment:fixed}
+/* pintura blanca sobre la pared: un poco gastada y con sombra */
+.p,.c,.t,.d,.a,.tit,.sub,.hint,.fila,.tt,.ts,.stencil,.tally{color:#f4f1e8;text-shadow:1px 1px 0 rgba(0,0,0,.45),0 0 1px rgba(255,255,255,.25)}
+.pant{min-height:100vh;position:relative}
+.wall{max-width:720px;margin:0 auto;padding:10px 24px 52px}
+.tit{font-family:'Marker',Impact,sans-serif;font-size:38px;-webkit-transform:rotate(-2deg);transform:rotate(-2deg);letter-spacing:1px;line-height:1;display:inline-block}
+.sub{font-family:'Elite',monospace;font-size:13px;letter-spacing:5px;margin:10px 0 0 6px;opacity:.85}
+.hint{font-family:'Mano';font-size:18px;margin:2px 0 0 40px;-webkit-transform:rotate(-3deg);transform:rotate(-3deg);opacity:.9;display:inline-block}
 .col{display:inline-block;vertical-align:top;width:49%}
-.n{margin:16px 8px 0}
-.c{font-family:'Marker',Impact,sans-serif;font-size:30px;color:#141414;display:inline-block;-webkit-transform:rotate(-2deg);transform:rotate(-2deg);line-height:1}
-.c.r{color:#9e1b12}
-.c.w{color:#ece6d4}
-.a{font-family:'Mano';font-size:19px;color:#e3dcc8;opacity:.75;margin-left:8px}
-.t{font-family:'Marker',Impact,sans-serif;font-size:15px;color:#ffd23a;margin-top:4px;letter-spacing:.5px}
-.d{font-family:'Mano';font-size:19px;line-height:1.15;color:#ece6d4;margin-top:1px}
-.d b{color:#ffd23a;font-weight:normal}
-.foot{margin-top:22px;position:relative;height:30px}
-.stencil{font-family:'Elite',monospace;font-size:12px;color:#ece6d4;opacity:.7;letter-spacing:6px;position:absolute;left:8px;top:6px}
-.tally{font-family:'Mano';color:#141414;font-size:22px;position:absolute;right:16px;top:0;-webkit-transform:rotate(4deg);transform:rotate(4deg)}
-/* Flecha al top 10 */
-.flecha{text-align:center;margin-top:18px;cursor:pointer;-webkit-user-select:none;user-select:none}
-.flecha .ft{font-family:'Marker',Impact,sans-serif;font-size:20px;color:#ffd23a;letter-spacing:2px;-webkit-transform:rotate(-2deg);transform:rotate(-2deg);display:inline-block}
-.flecha .fa{display:block;width:64px;margin:4px auto 0;color:#9e1b12;-webkit-animation:rebote 1.3s ease-in-out infinite;animation:rebote 1.3s ease-in-out infinite;-webkit-filter:drop-shadow(2px 2px 0 rgba(0,0,0,.3));filter:drop-shadow(2px 2px 0 rgba(0,0,0,.3))}
-.flecha:hover .fa{color:#c4241a}
-@-webkit-keyframes rebote{0%,100%{-webkit-transform:translateY(0) rotate(-3deg);transform:translateY(0) rotate(-3deg)}50%{-webkit-transform:translateY(12px) rotate(3deg);transform:translateY(12px) rotate(3deg)}}
-@keyframes rebote{0%,100%{-webkit-transform:translateY(0) rotate(-3deg);transform:translateY(0) rotate(-3deg)}50%{-webkit-transform:translateY(12px) rotate(3deg);transform:translateY(12px) rotate(3deg)}}
-.flecha.ida .fa{-webkit-animation:baja .6s ease-in forwards;animation:baja .6s ease-in forwards}
-@-webkit-keyframes baja{to{-webkit-transform:translateY(60px);transform:translateY(60px);opacity:0}}
-@keyframes baja{to{-webkit-transform:translateY(60px);transform:translateY(60px);opacity:0}}
-/* Top 10 */
-#top{display:none;margin-top:30px;padding-top:10px;border-top:2px dashed rgba(20,20,20,.35)}
-#top .tt{font-family:'Marker',Impact,sans-serif;font-size:40px;color:#9e1b12;-webkit-transform:rotate(-2deg);transform:rotate(-2deg);display:inline-block}
-#top .ts{font-family:'Mano';font-size:19px;color:#ffd23a;margin-left:10px}
-.fila{opacity:0;-webkit-transform:translateX(-25px) rotate(-1deg);transform:translateX(-25px) rotate(-1deg);margin:8px 6px 0;font-size:0;white-space:nowrap}
-.fila.ver{-webkit-animation:entra .45s ease-out forwards;animation:entra .45s ease-out forwards}
-@-webkit-keyframes entra{to{opacity:1;-webkit-transform:translateX(0) rotate(0);transform:translateX(0) rotate(0)}}
-@keyframes entra{to{opacity:1;-webkit-transform:translateX(0) rotate(0);transform:translateX(0) rotate(0)}}
+.n{margin:7px 8px 0}
+.c{font-family:'Marker',Impact,sans-serif;font-size:24px;display:inline-block;-webkit-transform:rotate(-2deg);transform:rotate(-2deg);line-height:1}
+.a{font-family:'Mano';font-size:17px;opacity:.7;margin-left:8px}
+.t{font-family:'Marker',Impact,sans-serif;font-size:13px;margin-top:3px;letter-spacing:1px;opacity:.85}
+.d{font-family:'Mano';font-size:16px;line-height:1.08;margin-top:1px;opacity:.95}
+.d b{font-weight:normal;text-decoration:underline}
+.foot{margin-top:10px;position:relative;height:24px}
+.stencil{font-family:'Elite',monospace;font-size:11px;opacity:.6;letter-spacing:6px;position:absolute;left:8px;top:6px}
+.tally{font-family:'Mano';font-size:20px;opacity:.7;position:absolute;right:16px;top:0;-webkit-transform:rotate(4deg);transform:rotate(4deg)}
+.fl{position:absolute;left:50%;bottom:4px;margin-left:-20px;width:40px;height:46px;cursor:pointer;color:#f4f1e8;-webkit-filter:drop-shadow(1px 2px 0 rgba(0,0,0,.45));filter:drop-shadow(1px 2px 0 rgba(0,0,0,.45))}
+.fl:hover{opacity:.8}
+.fl.up{top:8px;bottom:auto;-webkit-transform:rotate(180deg);transform:rotate(180deg)}
+#p2 .wall{padding-top:52px}
+.tt{font-family:'Marker',Impact,sans-serif;font-size:32px;-webkit-transform:rotate(-2deg);transform:rotate(-2deg);display:inline-block}
+.ts{font-family:'Mano';font-size:18px;margin-left:10px;opacity:.85}
+.fila{margin:2px 6px 0;font-size:0;white-space:nowrap}
 .fila span{display:inline-block;vertical-align:baseline}
-.fp{font-family:'Marker',Impact,sans-serif;font-size:30px;width:52px;color:#141414}
-.fila.r1 .fp{color:#ffd23a;font-size:36px}
-.fila.r2 .fp{color:#e9e9e9}
-.fila.r3 .fp{color:#e0954a}
-.fn{font-family:'Mano';font-size:26px;color:#ece6d4;width:300px;overflow:hidden;text-overflow:ellipsis}
-.fs{font-family:'Marker',Impact,sans-serif;font-size:24px;width:110px;text-align:right}
-.fs small{font-family:'Mano';font-size:16px;color:#e3dcc8;opacity:.7;margin-left:3px}
-.fw{font-family:'Mano';font-size:18px;color:#e3dcc8;opacity:.8;width:130px;text-align:right}
-.fw b{color:#7dffb0;font-weight:normal}
-.fw i{color:#ff8a7a;font-style:normal}
-.vacio{font-family:'Mano';font-size:22px;color:#ece6d4;margin:14px 8px}
-.arriba{font-family:'Mano';font-size:20px;color:#ffd23a;text-align:right;margin-top:16px;cursor:pointer}
+.fp{font-family:'Marker',Impact,sans-serif;font-size:22px;width:52px}
+.fila.r1 .fp{font-size:26px}
+.fn{font-family:'Mano';font-size:21px;width:300px;overflow:hidden;text-overflow:ellipsis}
+.fs{font-family:'Marker',Impact,sans-serif;font-size:20px;width:110px;text-align:right}
+.fs small{font-family:'Mano';font-size:15px;opacity:.7;margin-left:3px}
+.fw{font-family:'Mano';font-size:17px;opacity:.75;width:130px;text-align:right}
+.fw b,.fw i{font-weight:normal;font-style:normal}
+.vacio{font-family:'Mano';font-size:22px;margin:14px 8px}
 </style>
 </head>
 <body>
-<div class="wall"><div class="drip"></div>
+<div class="pant" id="p1"><div class="wall">
 <div class="tit">CLUB CAMPESTRE</div>
 <div class="sub">COMANDOS</div>
-<div class="hint">escribelos en el chat &darr;</div>
-<div class="col"><div class="n"><span class="c ">!sr</span><div class="t">Ver tu SR</div><div class="d">Tu rango, SR, puesto en el ranking, victorias, derrotas y winrate.</div></div><div class="n"><span class="c r">!top</span><div class="t">Top 10</div><div class="d">Los 10 mejores del server. Tu puesto sale en <span style="color:#ff8a2a">naranja</span>.</div></div><div class="n"><span class="c ">!sr_jugador</span><span class="a">+ nombre</span><div class="t">SR de otro jugador</div><div class="d">Escribe parte de su nombre.</div></div><div class="n"><span class="c w">!sr1v1</span><span class="a">o !top1v1</span><div class="t">Modo 1 vs 1</div><div class="d">Tu SR y el top del 1v1 (se guardan aparte).</div></div></div><div class="col"><div class="n"><span class="c r">!p</span><span class="a">o !pausa</span><div class="t">Pausar</div><div class="d">Votacion para todos (pasa con mayoria). En pausa: <b>F1</b> listo, <b>F2</b> no listo (o !r / !nr). Todos listos: 3, 2, 1 y se sigue.</div></div><div class="n"><span class="c r">!gg</span><span class="a">o !rendirse</span><div class="t">Rendirse</div><div class="d">Vota solo tu equipo (3 de 4). Desde el <b>2do capitulo</b>. Si se rinden, eligen campaña nueva. Si dicen no, recien en el siguiente capitulo.</div></div><div class="n"><span class="c w">!s</span><span class="a">o !spec</span><div class="t">Espectador / AFK</div><div class="d">Un bot toma tu lugar. Volver: tecla <b>M</b> o jointeam 2 / 3. No si te agarra un infectado; el Tank no puede.</div></div><div class="n"><span class="c ">F1 / F2</span><div class="t">Votar</div><div class="d"><b>F1 = SI</b> &nbsp; <b>F2 = NO</b> (pausa, rendirse, cambiar de campaña).</div></div></div>
-<div class="foot"><div class="stencil">NO RAGEQUIT &bull; NO TROLL</div><div class="tally">|||| |||| ||</div></div>
-<div class="flecha" id="flecha" onclick="irTop()"><span class="ft">TOP 10</span><span class="fa"><svg width="64" height="74" viewBox="0 0 64 74"><path d="M33 4 C 29 18, 36 33, 31 57" stroke="currentColor" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M11 39 Q 22 50 31 64 Q 41 49 53 37" stroke="currentColor" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-<div id="top"><span class="tt">TOP 10</span><span class="ts">los que mas SR tienen</span><div id="lista"></div>
-<div class="arriba" onclick="subir()">&uarr; volver a los comandos</div></div>
+<div class="hint">escribelos en el chat</div><br>
+<div class="col"><div class="n"><span class="c ">!sr</span><div class="t">Ver tu SR</div><div class="d">Tu rango, SR, puesto en el ranking, victorias, derrotas y winrate.</div></div><div class="n"><span class="c r">!top</span><div class="t">Top 10</div><div class="d">Los 10 mejores del server. Tu puesto sale resaltado.</div></div><div class="n"><span class="c ">!sr_jugador</span><span class="a">+ nombre</span><div class="t">SR de otro jugador</div><div class="d">Escribe parte de su nombre.</div></div><div class="n"><span class="c w">!sr1v1</span><span class="a">o !top1v1</span><div class="t">Modo 1 vs 1</div><div class="d">Tu SR y el top del 1v1 (se guardan aparte).</div></div></div><div class="col"><div class="n"><span class="c r">!p</span><span class="a">o !pausa</span><div class="t">Pausar</div><div class="d">Votacion para todos (pasa con mayoria). En pausa: <b>F1</b> listo, <b>F2</b> no listo (o !r / !nr). Todos listos: 3, 2, 1 y se sigue.</div></div><div class="n"><span class="c r">!gg</span><span class="a">o !rendirse</span><div class="t">Rendirse</div><div class="d">Vota solo tu equipo (3 de 4). Desde el <b>2do capitulo</b>. Si se rinden, eligen campaña nueva. Si dicen no, recien en el siguiente capitulo.</div></div><div class="n"><span class="c w">!s</span><span class="a">o !spec</span><div class="t">Espectador / AFK</div><div class="d">Un bot toma tu lugar. Volver: tecla <b>M</b> o jointeam 2 / 3. No si te agarra un infectado; el Tank no puede.</div></div><div class="n"><span class="c ">F1 / F2</span><div class="t">Votar</div><div class="d"><b>F1 = SI</b> &nbsp; <b>F2 = NO</b> (pausa, rendirse, cambiar de campaña).</div></div></div>
+</div><span class="fl" onclick="ir('p2')" title="Top 10"><svg width="40" height="46" viewBox="0 0 64 74"><path d="M33 4 C 29 18, 36 33, 31 57" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M11 39 Q 22 50 31 64 Q 41 49 53 37" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
 </div>
+<div class="pant" id="p2"><span class="fl up" onclick="ir('p1')" title="Comandos"><svg width="40" height="46" viewBox="0 0 64 74"><path d="M33 4 C 29 18, 36 33, 31 57" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M11 39 Q 22 50 31 64 Q 41 49 53 37" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="wall">
+<span class="tt">TOP 10</span><span class="ts">los que mas SR tienen</span>
+<div id="lista"></div>
+</div></div>
 <script>
 /* Top 10: se lee de index.html (la pagina del ranking, misma carpeta). */
 var COLORES={hierro:"#a7b0b8",bronce:"#e0954a",plata:"#dfe6ee",oro:"#ffd23a",platino:"#2ee0cc",diamante:"#3fb0ff",maestro:"#c08bff",leyenda:"#ff7038"};
@@ -98,12 +85,10 @@ function pintar(lista){
   for(var i=0;i<lista.length;i++){
     var j=lista[i],cl=(i==0?"r1":i==1?"r2":i==2?"r3":""),col=COLORES[j.r]||"#ece6d4";
     h+='<div class="fila '+cl+'"><span class="fp">'+esc(j.p||String(i+1))+'.</span><span class="fn">'+esc(j.n)+
-       '</span><span class="fs" style="color:'+col+'">'+esc(j.sr)+'<small>SR</small></span><span class="fw"><b>'+esc(j.w)+
+       '</span><span class="fs">'+esc(j.sr)+'<small>SR</small></span><span class="fw"><b>'+esc(j.w)+
        '</b> &middot; <i>'+esc(j.l)+'</i></span></div>';
   }
   c.innerHTML=h;
-  var f=c.querySelectorAll(".fila");
-  for(var k=0;k<f.length;k++){(function(el,d){setTimeout(function(){el.className+=" ver";},d);})(f[k],250+k*110);}
 }
 function cargar(cb){
   try{
@@ -115,28 +100,13 @@ function cargar(cb){
 }
 function deslizar(destino,ms){
   var ini=window.pageYOffset||document.documentElement.scrollTop,dist=destino-ini,t0=null;
-  var raf=window.requestAnimationFrame||window.webkitRequestAnimationFrame||function(f){return setTimeout(function(){f(new Date().getTime());},16);};
-  function paso(t){t=new Date().getTime();if(!t0)t0=t;var p=Math.min((t-t0)/ms,1),e=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
+  var raf=window.requestAnimationFrame||window.webkitRequestAnimationFrame||function(f){return setTimeout(f,16);};
+  function paso(){var t=new Date().getTime();if(!t0)t0=t;var p=Math.min((t-t0)/ms,1),e=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
     window.scrollTo(0,ini+dist*e);if(p<1)raf(paso);}
   raf(paso);
 }
-function irTop(){
-  var fl=document.getElementById("flecha"),top=document.getElementById("top");
-  fl.className="flecha ida";
-  setTimeout(function(){
-    fl.style.display="none";top.style.display="block";
-    deslizar(top.getBoundingClientRect().top+(window.pageYOffset||0)-10,900);
-    if(!cargado){cargado=true;cargar(pintar);}
-  },450);
-}
-function subir(){
-  deslizar(0,800);
-  setTimeout(function(){
-    document.getElementById("top").style.display="none";
-    var fl=document.getElementById("flecha");fl.style.display="block";fl.className="flecha";
-    cargado=false;document.getElementById("lista").innerHTML="";
-  },820);
-}
+function ir(id){var el=document.getElementById(id);deslizar(el.offsetTop,800);}
+cargar(pintar);
 </script>
 </body>
 </html>
