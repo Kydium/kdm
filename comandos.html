@@ -14,7 +14,9 @@ body{background:#55524b;font-family:'Mano','Segoe Print','Comic Sans MS',cursive
  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),radial-gradient(ellipse at 30% 15%,rgba(255,255,240,.14),transparent 60%),radial-gradient(ellipse at 80% 95%,rgba(0,0,0,.45),transparent 60%),linear-gradient(180deg,#625e55,#45423b);background-attachment:fixed}
 /* pintura blanca sobre la pared: un poco gastada y con sombra */
 .p,.c,.t,.d,.a,.tit,.sub,.hint,.fila,.tt,.ts,.stencil,.tally{color:#f4f1e8;text-shadow:1px 1px 0 rgba(0,0,0,.45),0 0 1px rgba(255,255,255,.25)}
-.pant{min-height:100vh;position:relative}
+body{overflow:hidden}
+#deck{-webkit-transition:-webkit-transform .8s cubic-bezier(.65,0,.35,1);transition:transform .8s cubic-bezier(.65,0,.35,1);will-change:transform}
+.pant{height:100vh;overflow:hidden;position:relative}
 .wall{max-width:720px;margin:0 auto;padding:10px 24px 52px}
 .tit{font-family:'Marker',Impact,sans-serif;font-size:38px;-webkit-transform:rotate(-2deg);transform:rotate(-2deg);letter-spacing:1px;line-height:1;display:inline-block}
 .sub{font-family:'Elite',monospace;font-size:13px;letter-spacing:5px;margin:10px 0 0 6px;opacity:.85}
@@ -48,7 +50,7 @@ body{background:#55524b;font-family:'Mano','Segoe Print','Comic Sans MS',cursive
 </style>
 </head>
 <body>
-<div class="pant" id="p1"><div class="wall">
+<div id="deck"><div class="pant" id="p1"><div class="wall">
 <div class="tit">CLUB CAMPESTRE</div>
 <div class="sub">COMANDOS</div>
 <div class="hint">escribelos en el chat</div><br>
@@ -58,7 +60,7 @@ body{background:#55524b;font-family:'Mano','Segoe Print','Comic Sans MS',cursive
 <div class="pant" id="p2"><span class="fl up" onclick="ir('p1')" title="Comandos"><svg width="40" height="46" viewBox="0 0 64 74"><path d="M33 4 C 29 18, 36 33, 31 57" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M11 39 Q 22 50 31 64 Q 41 49 53 37" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="wall">
 <span class="tt">TOP 10</span><span class="ts">los que mas SR tienen</span>
 <div id="lista"></div>
-</div></div>
+</div></div></div>
 <script>
 /* Top 10: se lee de index.html (la pagina del ranking, misma carpeta). */
 var COLORES={hierro:"#a7b0b8",bronce:"#e0954a",plata:"#dfe6ee",oro:"#ffd23a",platino:"#2ee0cc",diamante:"#3fb0ff",maestro:"#c08bff",leyenda:"#ff7038"};
@@ -98,14 +100,11 @@ function cargar(cb){
     x.send();
   }catch(e){cb(null);}
 }
-function deslizar(destino,ms){
-  var ini=window.pageYOffset||document.documentElement.scrollTop,dist=destino-ini,t0=null;
-  var raf=window.requestAnimationFrame||window.webkitRequestAnimationFrame||function(f){return setTimeout(f,16);};
-  function paso(){var t=new Date().getTime();if(!t0)t0=t;var p=Math.min((t-t0)/ms,1),e=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
-    window.scrollTo(0,ini+dist*e);if(p<1)raf(paso);}
-  raf(paso);
+function ir(id){
+  var y=(id=="p2")?-window.innerHeight:0,d=document.getElementById("deck"),v="translate3d(0,"+y+"px,0)";
+  d.style.webkitTransform=v;d.style.transform=v;
 }
-function ir(id){var el=document.getElementById(id);deslizar(el.offsetTop,800);}
+window.onresize=function(){var d=document.getElementById("deck");if(d.style.transform&&d.style.transform.indexOf("-")>0)ir("p2");};
 cargar(pintar);
 </script>
 </body>
