@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>ClubCampestre</title>
-<!-- Pagina del server (MOTD). Plantilla del plugin SR: <div class="fila r1"><span class="fp">1.</span><span class="fn">$Rc_hard</span><span class="fs">585<small>SR</small></span><span class="fw"><b>3W</b> &middot; <i>1L</i></span></div><div class="fila r2"><span class="fp">2.</span><span class="fn">LELORE</span><span class="fs">580<small>SR</small></span><span class="fw"><b>4W</b> &middot; <i>2L</i></span></div><div class="fila r3"><span class="fp">3.</span><span class="fn">LINK</span><span class="fs">573<small>SR</small></span><span class="fw"><b>10W</b> &middot; <i>4L</i></span></div><div class="fila"><span class="fp">4.</span><span class="fn">MAZETA</span><span class="fs">548<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">5.</span><span class="fn">™DanFor (:</span><span class="fs">547<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">6.</span><span class="fn">Slein</span><span class="fs">546<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">7.</span><span class="fn">tdioscaqui</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">8.</span><span class="fn">TOPO GIGIO</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">9.</span><span class="fn">CAPITAN PE</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">10.</span><span class="fn">Sxntanna</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div> y 14/11/2026 01:47 se rellenan solos.
+<!-- Pagina del server (MOTD). Plantilla del plugin SR: <div class="fila r1"><span class="fp">1.</span><span class="fn">$Rc_hard</span><span class="fs">585<small>SR</small></span><span class="fw"><b>3W</b> &middot; <i>1L</i></span></div><div class="fila r2"><span class="fp">2.</span><span class="fn">LELORE</span><span class="fs">580<small>SR</small></span><span class="fw"><b>4W</b> &middot; <i>2L</i></span></div><div class="fila r3"><span class="fp">3.</span><span class="fn">LINK</span><span class="fs">573<small>SR</small></span><span class="fw"><b>10W</b> &middot; <i>4L</i></span></div><div class="fila"><span class="fp">4.</span><span class="fn">MAZETA</span><span class="fs">548<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">5.</span><span class="fn">™DanFor (:</span><span class="fs">547<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">6.</span><span class="fn">Slein</span><span class="fs">546<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">7.</span><span class="fn">tdioscaqui</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">8.</span><span class="fn">TOPO GIGIO</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">9.</span><span class="fn">CAPITAN PE</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">10.</span><span class="fn">Sxntanna</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div> y 14/11/2026 01:55 se rellenan solos.
      Los brackets se editan con editar_torneos.html (bloques DATOS de abajo). -->
 <style>
 @font-face{font-family:'Marker';src:url(fonts/marker.woff2) format('woff2'),url(fonts/marker.woff) format('woff');font-display:swap}
@@ -80,30 +80,36 @@ body{overflow:hidden}
 #pE .copa .cn{font-family:'Marker',Impact,sans-serif;font-size:18px;letter-spacing:1px;margin-top:6px;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
 #pE .copa .cs{font-family:'Mano';font-size:19px;font-weight:bold;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
 /* ---- liga ---- */
-#pL .wall{max-width:920px;margin:0 auto;padding:44px 24px 24px;position:relative}
+#pL.pant{overflow-y:auto;overflow-x:hidden}
+#pL .wall{max-width:980px;margin:0 auto;padding:44px 24px 30px;position:relative}
 #pL .tit{font-family:'Marker',Impact,sans-serif;font-size:36px;-webkit-transform:rotate(-2deg);transform:rotate(-2deg);display:inline-block;line-height:1;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
 #pL .sub{font-family:'Elite',monospace;font-size:14px;letter-spacing:3px;margin:8px 0 0 6px;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
 #pL .hint{font-family:'Mano';font-size:21px;margin:0 0 0 30px;-webkit-transform:rotate(-3deg);transform:rotate(-3deg);display:inline-block;opacity:.9;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
-#pL .lay{position:relative;font-size:0;margin-top:22px;white-space:nowrap}
-#pL .lay>div{display:inline-block;vertical-align:top;white-space:normal}
-#pL table.lg{border-collapse:collapse;margin-top:4px}
-#pL .lg th{font-family:'Marker',Impact,sans-serif;font-size:16px;letter-spacing:1px;font-weight:normal;padding:0 7px 4px;text-align:right;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
+#pL .lay{position:relative;font-size:0;margin-top:16px;white-space:nowrap}
+#pL .colR,#pL .colT{display:inline-block;vertical-align:top;white-space:normal}
+#pL .colR{width:290px}
+#pL .colT{margin-left:44px}
+#pL .rn{font-family:'Marker',Impact,sans-serif;font-size:18px;letter-spacing:1px;margin:12px 0 8px;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
+#pL .rn:first-child{margin-top:0}
+#pL .pm{position:relative;width:262px;margin:0 0 10px 4px;padding:4px 9px}
+#pL .pe{font-size:0;white-space:nowrap;line-height:1}
+#pL .pe span{display:inline-block;vertical-align:baseline;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
+#pL .pn{font-family:'Mano';font-size:19px;font-weight:bold;width:206px;overflow:hidden;text-overflow:ellipsis}
+#pL .ps{font-family:'Marker',Impact,sans-serif;font-size:18px;width:36px;text-align:right}
+#pL .pe.pierde{opacity:.7}
+#pL .vacio{font-family:'Mano';font-size:20px;opacity:.8;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
+#pL table.lg{border-collapse:collapse}
+#pL .lg th{font-family:'Marker',Impact,sans-serif;font-size:15px;letter-spacing:1px;font-weight:normal;padding:0 9px 5px;text-align:center;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
 #pL .lg th.l{text-align:left}
-#pL .lg td{font-family:'Mano';font-size:21px;font-weight:bold;padding:3px 7px 0;text-align:right;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
-#pL .lg td.po{font-family:'Marker',Impact,sans-serif;font-size:22px;text-align:left;width:40px}
-#pL .lg td.nm{text-align:left;width:185px}
-#pL .lg td.sm{font-size:20px;opacity:.9}
-#pL .lg td.pt{font-family:'Marker',Impact,sans-serif;font-size:25px}
+#pL .lg td{font-family:'Mano';font-size:21px;font-weight:bold;padding:4px 9px 1px;text-align:center;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
+#pL .lg td.po{font-family:'Marker',Impact,sans-serif;font-size:22px;text-align:left;width:38px}
+#pL .lg td.nm{text-align:left;width:200px}
+#pL .lg td.pt{font-family:'Marker',Impact,sans-serif;font-size:24px}
 #pL svg.lin{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none}
 #pL svg.lin path{fill:none;stroke:#f4f1e8;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;opacity:.85;filter:url(#tizaL)}
 #pL svg.lin path.fino{stroke-width:1.6;opacity:.6}
-#pL .ley{font-family:'Elite',monospace;font-size:13px;letter-spacing:0;opacity:.9;margin-top:10px;line-height:1.6;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
-#pL .side{margin-left:112px;width:210px;padding:6px 0 4px}
-#pL .pasan{position:absolute;font-family:'Mano';font-size:20px;font-weight:bold;-webkit-transform:rotate(-6deg);transform:rotate(-6deg);white-space:nowrap;text-shadow:1px 1px 0 rgba(0,0,0,.45)}
-#pL .st{font-family:'Marker',Impact,sans-serif;font-size:22px;-webkit-transform:rotate(-2deg);transform:rotate(-2deg);display:inline-block;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
-#pL .jm{font-family:'Mano';font-size:21px;font-weight:bold;margin-top:6px;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
-#pL .jm i{font-style:normal;opacity:.8;font-size:16px}
-#pL .fz{font-family:'Mano';font-size:18px;font-weight:bold;margin-top:14px;line-height:1.15;-webkit-transform:rotate(-1.5deg);transform:rotate(-1.5deg);text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
+#pL .ley{font-family:'Elite',monospace;font-size:12px;opacity:.9;margin-top:12px;line-height:1.6;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
+#pL .pasan{position:absolute;font-family:'Mano';font-size:20px;font-weight:bold;-webkit-transform:rotate(-6deg);transform:rotate(-6deg);white-space:nowrap;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
 </style>
 </head>
 <body>
@@ -171,10 +177,20 @@ body{overflow:hidden}
  "nota": "",
  "descripcion": "",
  "pasan": 1,
- "puntos_victoria": 1,
+ "puntos": {
+  "victoria": 2,
+  "empate": 1,
+  "derrota": 0
+ },
+ "nombre_sets": "Mapas",
+ "columnas": [
+  "gpe",
+  "sg",
+  "dif",
+  "pts"
+ ],
  "equipos": [],
- "resultados": [],
- "proxima": [],
+ "rondas": [],
  "nota_abajo": ""
 };/*FIN DATOS*/</script>
 <div class="nav"><a href="#comandos" data-n="0" onclick="return ir(0)">comandos</a><a href="#top" data-n="1" onclick="return ir(1)">top 10</a><a href="#eliminatoria" data-n="2" onclick="return ir(2)">eliminatoria</a><a href="#liga" data-n="3" onclick="return ir(3)">liga</a></div>
@@ -188,7 +204,7 @@ body{overflow:hidden}
 <div class="pant" id="pT"><div class="wall">
 <span class="tt">TOP 10</span><span class="ts">los que mas SR tienen</span>
 <div id="lista"><div class="fila r1"><span class="fp">1.</span><span class="fn">$Rc_hard</span><span class="fs">585<small>SR</small></span><span class="fw"><b>3W</b> &middot; <i>1L</i></span></div><div class="fila r2"><span class="fp">2.</span><span class="fn">LELORE</span><span class="fs">580<small>SR</small></span><span class="fw"><b>4W</b> &middot; <i>2L</i></span></div><div class="fila r3"><span class="fp">3.</span><span class="fn">LINK</span><span class="fs">573<small>SR</small></span><span class="fw"><b>10W</b> &middot; <i>4L</i></span></div><div class="fila"><span class="fp">4.</span><span class="fn">MAZETA</span><span class="fs">548<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">5.</span><span class="fn">™DanFor (:</span><span class="fs">547<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">6.</span><span class="fn">Slein</span><span class="fs">546<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">7.</span><span class="fn">tdioscaqui</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">8.</span><span class="fn">TOPO GIGIO</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">9.</span><span class="fn">CAPITAN PE</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">10.</span><span class="fn">Sxntanna</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div></div>
-<div class="upd">actualizado 14/11/2026 01:47</div>
+<div class="upd">actualizado 14/11/2026 01:55</div>
 </div></div>
 <div class="pant" id="pE"><div class="wall">
 <div class="tit" id="de_tit"></div> <div class="hint" id="de_nota"></div>
@@ -203,14 +219,10 @@ body{overflow:hidden}
 <div class="pant" id="pL"><div class="wall">
 <div class="tit" id="dl_tit"></div> <div class="hint" id="dl_nota"></div>
 <div class="sub" id="dl_desc"></div>
-<div class="lay" id="lay"><svg class="lin" id="linL"><defs><filter id="tizaL" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3" result="r"/><feDisplacementMap in="SourceGraphic" in2="r" scale="2.6"/></filter></defs></svg><div>
-<table class="lg" id="tabla"></table>
-<div class="ley">PJ jugados &middot; G ganados &middot; P perdidos &middot; PTS CAMP. puntos de campaña a favor<br>DIF puntos a favor menos en contra (desempate)</div>
-</div><div class="pasan" id="pasan">&larr; pasan</div><div class="side">
-<div class="st">PROXIMA FECHA</div>
-<div id="prox"></div>
-<div class="fz" id="dl_abajo"></div>
-</div></div>
+<div class="lay" id="lay"><svg class="lin" id="linL"><defs><filter id="tizaL" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3" result="r"/><feDisplacementMap in="SourceGraphic" in2="r" scale="2.6"/></filter></defs></svg>
+<div class="colR" id="rondas"></div><div class="colT"><table class="lg" id="tabla"></table><div class="ley" id="leyenda"></div></div>
+<div class="pasan" id="pasan">&larr; pasan</div>
+</div>
 </div></div>
 </div></div>
 <script>
@@ -317,8 +329,7 @@ var cq=rel(document.querySelector(".copa .q"),br);dib(ovalo(cq.x+cq.w/2,cq.y+cq.
 
 }
 function initL(){
-/* "Dibujado a mano": trazos con temblor, dos pasadas y esquinas que se pasan */
-var _s=7;function rnd(){_s=(_s*16807)%2147483647;return (_s-1)/2147483646;}
+var _s=11;function rnd(){_s=(_s*16807)%2147483647;return (_s-1)/2147483646;}
 function j(a){return (rnd()-.5)*2*a;}
 function linea(x1,y1,x2,y2,t){t=t||1.6;var dx=x2-x1,dy=y2-y1,L=Math.sqrt(dx*dx+dy*dy)||1,n=Math.max(2,Math.round(L/40)),d="",k,p;
  for(p=0;p<2;p++){d+="M"+(x1+j(t))+" "+(y1+j(t));for(k=1;k<=n;k++){var f=k/n;d+=" L"+(x1+dx*f+j(t*(k==n?1:.9)))+" "+(y1+dy*f+j(t*(k==n?1:.9)));}}
@@ -331,54 +342,66 @@ function ovalo(cx,cy,rx,ry){var d="",a0=j(.6),k,v=1.18;for(k=0;k<=30;k++){var a=
 function tacha(x1,y,x2){var d="M"+x1+" "+(y+j(1.5)),n=Math.round((x2-x1)/14),k;for(k=1;k<=n;k++)d+=" L"+(x1+(x2-x1)*k/n)+" "+(y+(k%2?-3:3)+j(1));return d;}
 function svgCapa(id){var s=document.getElementById(id),NS="http://www.w3.org/2000/svg";return function(d,cls,st){var p=document.createElementNS(NS,"path");p.setAttribute("d",d);if(cls)p.setAttribute("class",cls);if(st)p.setAttribute("style",st);s.appendChild(p);};}
 function rel(el,base){var a=el.getBoundingClientRect(),b=base.getBoundingClientRect();return {x:a.left-b.left,y:a.top-b.top,w:a.width,h:a.height};}
-
-// ---- arma la tabla con los DATOS (arriba) ----
 function esc(t){return String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
-(function(){
-  var L=LIGA,P=L.puntos_victoria||3,st={},k,i;
-  for(k=0;k<L.equipos.length;k++)st[L.equipos[k]]={n:L.equipos[k],pj:0,g:0,p:0,af:0,ec:0};
-  for(k=0;k<L.resultados.length;k++){var r=L.resultados[k],a=st[r[0]],b=st[r[2]],pa=parseInt(r[1],10),pb=parseInt(r[3],10);
-    if(!a||!b||isNaN(pa)||isNaN(pb))continue;
-    a.pj++;b.pj++;a.af+=pa;a.ec+=pb;b.af+=pb;b.ec+=pa;
-    if(pa>pb){a.g++;b.p++;}else if(pb>pa){b.g++;a.p++;}}
-  var t=[];for(k in st)t.push(st[k]);
-  t.sort(function(x,y){return (y.g*P-x.g*P)||((y.af-y.ec)-(x.af-x.ec))||(y.af-x.af);});
-  var h='<tr><th class="l">#</th><th class="l">EQUIPO</th><th>PJ</th><th>G</th><th>P</th><th>PTS CAMP.</th><th>DIF</th><th>PTS</th></tr>';
-  for(i=0;i<t.length;i++){var e=t[i],d=e.af-e.ec;
-    h+='<tr'+(i<L.pasan?' class="top"':'')+'><td class="po">'+(i+1)+'.</td><td class="nm"><span class="tx">'+esc(e.n)+'</span></td><td>'+e.pj+'</td><td>'+e.g+'</td><td>'+e.p+'</td><td class="sm">'+e.af+'</td><td class="sm">'+(d>0?"+":"")+d+'</td><td class="pt">'+(e.g*P)+'</td></tr>';}
-  document.getElementById("tabla").innerHTML=h;
-  var j="";for(k=0;k<(L.proxima||[]).length;k++)j+='<div class="jm"><span>'+esc(L.proxima[k][0])+'</span> <i>vs</i> <span>'+esc(L.proxima[k][1])+'</span></div>';
-  document.getElementById("prox").innerHTML=j||'<div class="jm">-</div>';
-  document.getElementById("dl_tit").innerHTML=esc(L.titulo);
-  document.getElementById("dl_nota").innerHTML=esc(L.nota);
-  document.getElementById("dl_desc").innerHTML=esc(L.descripcion);
-  document.getElementById("dl_abajo").innerHTML=esc(L.nota_abajo);
-  document.getElementById("pasan").style.display=(L.equipos.length>(L.pasan||2))?"":"none";
-})();
-var PASAN=Math.max(1,Math.min(LIGA.pasan||2,LIGA.equipos.length-1));
+function num(v){v=parseInt(v,10);return isNaN(v)?null:v;}
 
-if(document.querySelectorAll(".lg tr").length>PASAN){
-var lay=document.getElementById("lay"),dib=svgCapa("linL"),k;
-var tb=rel(document.querySelector(".lg"),lay),trs=document.querySelectorAll(".lg tr");
-// raya bajo los titulos
-var th=rel(trs[0],lay);dib(linea(tb.x,th.y+th.h,tb.x+tb.w,th.y+th.h+2,1.4));
-// rayitas suaves entre filas
-for(k=1;k<trs.length-1;k++){var r=rel(trs[k],lay);dib(linea(tb.x+40,r.y+r.h+1,tb.x+tb.w-10,r.y+r.h+1,1),"fino","opacity:.25");}
-// corte: pasan los 2 primeros (punteado a mano) + flechita
-var c=rel(trs[PASAN],lay),yy=c.y+c.h+2,i,dd="";
-for(i=tb.x;i<tb.x+tb.w;i+=20)dd+=linea(i,yy,i+11,yy,1);
-dib(dd);
-// los 2 que pasan: subrayado a mano del nombre y circulo en sus puntos
-for(k=1;k<=PASAN;k++){var nm=rel(trs[k].querySelector(".nm"),lay),pt=rel(trs[k].querySelector(".pt"),lay);
-  var tx=rel(trs[k].querySelector(".nm .tx"),lay);
-  dib(linea(tx.x,tx.y+tx.h-3,tx.x+tx.w+4,tx.y+tx.h-1,1.2),"fino");
-  dib(ovalo(pt.x+pt.w-15,pt.y+pt.h/2+2,20,14),"fino");}
-// "pasan" escrito al lado del corte
-var nota=document.getElementById("pasan");nota.style.left=(tb.x+tb.w+8)+"px";nota.style.top=(yy-22)+"px";
-// recuadro de la proxima fecha
-}
-var lay=document.getElementById("lay"),dib=svgCapa("linL"),sd=rel(document.querySelector(".side"),lay);dib(caja(sd.x-14,sd.y-8,sd.w+10,sd.h+14,1.6));
+var L=LIGA,PT=L.puntos||{victoria:2,empate:1,derrota:0},cols=L.columnas||["pj","gpe","sg","dif","pts"],sets=L.nombre_sets||"Sets";
+var st={},k,i,orden=[];
+for(k=0;k<(L.equipos||[]).length;k++){st[L.equipos[k]]={n:L.equipos[k],pj:0,g:0,p:0,e:0,sg:0,sc:0,se:0};orden.push(L.equipos[k]);}
+// rondas
+var hr="";
+(L.rondas||[]).forEach(function(r,ri){
+  hr+='<div class="rn">'+esc(r.nombre||("Ronda "+(ri+1)))+'</div>';
+  (r.partidos||[]).forEach(function(p){
+    var a=num(p[1]),b=num(p[3]),jug=(a!=null&&b!=null),wa=jug&&a>b,wb=jug&&b>a;
+    hr+='<div class="pm"><div class="pe'+(wb?" pierde":"")+(wa?" gana":"")+'"><span class="pn"><span class="tx">'+esc(p[0])+'</span></span><span class="ps">'+(a==null?"-":a)+'</span></div>'+
+        '<div class="pe'+(wa?" pierde":"")+(wb?" gana":"")+'"><span class="pn"><span class="tx">'+esc(p[2])+'</span></span><span class="ps">'+(b==null?"-":b)+'</span></div></div>';
+    if(!jug)return;
+    var A=st[p[0]],B=st[p[2]];if(!A||!B)return;
+    A.pj++;B.pj++;A.sg+=a;A.sc+=b;B.sg+=b;B.sc+=a;
+    if(a>b){A.g++;B.p++;}else if(b>a){B.g++;A.p++;}else{A.e++;B.e++;A.se++;B.se++;}
+  });
+});
+document.getElementById("rondas").innerHTML=hr||'<div class="vacio">todavia no hay partidos</div>';
+// tabla
+var t=[];for(k=0;k<orden.length;k++){var e=st[orden[k]];e.pts=e.g*(+PT.victoria||0)+e.e*(+PT.empate||0)+e.p*(+PT.derrota||0);t.push(e);}
+t.sort(function(x,y){return (y.pts-x.pts)||((y.sg-y.sc)-(x.sg-x.sc))||(y.sg-x.sg);});
+var COL={pj:["PJ",function(e){return e.pj;}],gpe:["G-P-E",function(e){return e.g+" - "+e.p+" - "+e.e;}],
+ g:["G",function(e){return e.g;}],p:["P",function(e){return e.p;}],e:["E",function(e){return e.e;}],
+ sg:[sets.toUpperCase()+" GANADOS",function(e){return e.sg;}],sc:[sets.toUpperCase()+" EN CONTRA",function(e){return e.sc;}],
+ se:[sets.toUpperCase()+" EMPATADOS",function(e){return e.se;}],dif:["DIF",function(e){var d=e.sg-e.sc;return (d>0?"+":"")+d;}],
+ pts:["PTS",function(e){return e.pts;}]};
+var h='<tr><th class="l">#</th><th class="l">EQUIPO</th>';
+cols.forEach(function(c){if(COL[c])h+='<th>'+COL[c][0]+'</th>';});h+='</tr>';
+for(i=0;i<t.length;i++){h+='<tr'+(i<L.pasan?' class="top"':'')+'><td class="po">'+(i+1)+'.</td><td class="nm"><span class="tx">'+esc(t[i].n)+'</span></td>';
+  cols.forEach(function(c){if(COL[c])h+='<td'+(c=="pts"?' class="pt"':'')+'>'+COL[c][1](t[i])+'</td>';});h+='</tr>';}
+document.getElementById("tabla").innerHTML=t.length?h:'';
+document.getElementById("leyenda").innerHTML=t.length?("victoria "+(+PT.victoria||0)+" pts &middot; empate "+(+PT.empate||0)+" &middot; derrota "+(+PT.derrota||0)+(L.nota_abajo?"<br>"+esc(L.nota_abajo):"")):"";
+document.getElementById("dl_tit").innerHTML=esc(L.titulo);
+document.getElementById("dl_nota").innerHTML=esc(L.nota);
+document.getElementById("dl_desc").innerHTML=esc(L.descripcion);
 
+// dibujo a mano
+var lay=document.getElementById("lay"),dib=svgCapa("linL");
+[].forEach.call(document.querySelectorAll("#pL .pm"),function(m){var r=rel(m,lay);dib(caja(r.x,r.y,r.w,r.h,1.6));
+  [].forEach.call(m.querySelectorAll(".pe"),function(e){
+    if(e.className.indexOf("pierde")>=0){var tx=rel(e.querySelector(".tx"),lay);dib(tacha(tx.x-2,tx.y+tx.h*.55,tx.x+tx.w+3),"fino");}
+    if(e.className.indexOf("gana")>=0){var q=rel(e.querySelector(".ps"),lay);dib(ovalo(q.x+q.w-11,q.y+q.h/2+1,17,12),"fino");}
+  });});
+var trs=document.querySelectorAll("#pL .lg tr"),pas=document.getElementById("pasan");
+if(trs.length>1){
+  var tb=rel(document.getElementById("tabla"),lay),th=rel(trs[0],lay);
+  dib(linea(tb.x,th.y+th.h,tb.x+tb.w,th.y+th.h+2,1.4));
+  for(k=1;k<trs.length-1;k++){var r=rel(trs[k],lay);dib(linea(tb.x+40,r.y+r.h+1,tb.x+tb.w-10,r.y+r.h+1,1),"fino","opacity:.25");}
+  var P=Math.max(0,Math.min(L.pasan||0,trs.length-2));
+  if(P>0){
+    var c=rel(trs[P],lay),yy=c.y+c.h+2,dd="";
+    for(i=tb.x;i<tb.x+tb.w;i+=20)dd+=linea(i,yy,i+11,yy,1);dib(dd);
+    for(k=1;k<=P;k++){var tx=rel(trs[k].querySelector(".nm .tx"),lay);dib(linea(tx.x,tx.y+tx.h-3,tx.x+tx.w+4,tx.y+tx.h-1,1.2),"fino");
+      var pt=trs[k].querySelector(".pt");if(pt){var q=rel(pt,lay);dib(ovalo(q.x+q.w/2,q.y+q.h/2+2,20,14),"fino");}}
+    pas.style.left=(tb.x+tb.w+8)+"px";pas.style.top=(yy-22)+"px";pas.style.display="";
+  }else pas.style.display="none";
+}else pas.style.display="none";
 }
 /* dibuja cuando ya cargaron las letras (si no, las medidas salen corridas) */
 var hecho=false;function arrancar(){if(hecho)return;hecho=true;try{initE();}catch(e){}try{initL();}catch(e){}}
