@@ -22,8 +22,9 @@ from datetime import datetime
 
 # ─── CONFIGURACION ────────────────────────────────────────────────────────────
 # Archivo generado por el plugin (dentro de SourceMod, siempre accesible)
-# Ranking que genera el plugin en el SERVIDOR DEDICADO
+# Ranking que genera el plugin: juego (Steam) y servidor dedicado. Se sube el mas reciente.
 SM_INDEX_RUTAS = [
+    Path(r"E:\Steam\steamapps\common\Left 4 Dead 2\left4dead2\addons\sourcemod\data\sr_index.html"),
     Path(r"E:\L4D2SVR\left4dead2\addons\sourcemod\data\sr_index.html"),
 ]
 

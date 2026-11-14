@@ -1,0 +1,93 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>ClubCampestre - Torneo (eliminatoria)</title><style>
+@font-face{font-family:'Marker';src:url(fonts/marker.woff2) format('woff2'),url(fonts/marker.woff) format('woff');font-display:swap}
+@font-face{font-family:'Mano';src:url(fonts/mano.woff2) format('woff2'),url(fonts/mano.woff) format('woff');font-display:swap}
+@font-face{font-family:'Elite';src:url(fonts/elite.woff2) format('woff2'),url(fonts/elite.woff) format('woff');font-display:swap}
+*{margin:0;padding:0;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{height:100%}
+body{background:#55524b;font-family:'Mano','Segoe Print','Comic Sans MS',cursive;color:#f4f1e8;overflow-x:hidden;
+ background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),radial-gradient(ellipse at 30% 15%,rgba(255,255,240,.14),transparent 60%),radial-gradient(ellipse at 80% 95%,rgba(0,0,0,.45),transparent 60%),linear-gradient(180deg,#625e55,#45423b);background-attachment:fixed}
+body{overflow-x:hidden}
+.wall{max-width:1000px;margin:0 auto;padding:12px 24px 24px;position:relative}
+.tit{font-family:'Marker',Impact,sans-serif;font-size:36px;-webkit-transform:rotate(-2deg);transform:rotate(-2deg);display:inline-block;line-height:1;text-shadow:1px 1px 0 rgba(0,0,0,.45),0 0 1px rgba(255,255,255,.25)}
+.sub{font-family:'Elite',monospace;font-size:12px;letter-spacing:5px;margin:8px 0 0 6px;opacity:.8;text-shadow:1px 1px 0 rgba(0,0,0,.45),0 0 1px rgba(255,255,255,.25)}
+.hint{font-family:'Mano';font-size:18px;margin:0 0 0 30px;-webkit-transform:rotate(-3deg);transform:rotate(-3deg);display:inline-block;opacity:.9;text-shadow:1px 1px 0 rgba(0,0,0,.45),0 0 1px rgba(255,255,255,.25)}
+
+.br{position:relative;margin-top:14px;height:400px}
+.colb{position:absolute;top:0;bottom:0;width:230px}
+.c1{left:0}.c2{left:300px}.c3{left:600px}.c4{left:860px;width:140px}
+.ct{font-family:'Marker',Impact,sans-serif;font-size:14px;letter-spacing:2px;opacity:.75;position:absolute;top:-4px;left:6px;text-shadow:1px 1px 0 rgba(0,0,0,.45),0 0 1px rgba(255,255,255,.25)}
+.m{position:absolute;left:0;right:0;padding:5px 10px}
+.eq{font-size:0;white-space:nowrap;line-height:1}
+.eq span{display:inline-block;vertical-align:baseline;text-shadow:1px 1px 0 rgba(0,0,0,.45),0 0 1px rgba(255,255,255,.25)}
+.en{font-family:'Mano';font-size:20px;width:170px;overflow:hidden;text-overflow:ellipsis}
+.es{font-family:'Marker',Impact,sans-serif;font-size:18px;width:40px;text-align:right}
+.eq.gana .en{font-weight:bold}
+.eq.pierde{opacity:.45}
+.nota{font-family:'Elite',monospace;font-size:10px;letter-spacing:2px;opacity:.7;margin-top:2px;text-shadow:1px 1px 0 rgba(0,0,0,.45),0 0 1px rgba(255,255,255,.25)}
+svg.lin{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+svg.lin path{fill:none;stroke:#f4f1e8;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;opacity:.85;filter:url(#tiza)}
+svg.lin path.fino{stroke-width:1.6;opacity:.6}
+.copa{position:absolute;top:150px;left:0;right:0;text-align:center}
+.copa .q{font-family:'Mano';font-size:42px;line-height:1;text-shadow:1px 1px 0 rgba(0,0,0,.45),0 0 1px rgba(255,255,255,.25)}
+.copa .cn{font-family:'Marker',Impact,sans-serif;font-size:15px;letter-spacing:1px;margin-top:6px;text-shadow:1px 1px 0 rgba(0,0,0,.45),0 0 1px rgba(255,255,255,.25)}
+.copa .cs{font-family:'Mano';font-size:16px;opacity:.75;text-shadow:1px 1px 0 rgba(0,0,0,.45),0 0 1px rgba(255,255,255,.25)}
+</style></head><body><div class="wall">
+<div class="tit">TORNEO CAMPESTRE</div> <div class="hint">copa de invierno</div>
+<div class="sub">ELIMINATORIA &middot; 8 EQUIPOS &middot; GANA EL QUE SUMA MAS PUNTOS EN LA CAMPAÑA</div>
+<div class="br" id="br">
+<svg class="lin" id="lin"><defs><filter id="tiza" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3" result="r"/><feDisplacementMap in="SourceGraphic" in2="r" scale="2.6"/></filter></defs></svg>
+<div class="colb c1"><div class="ct">CUARTOS</div><div class="m" id="q0"><div class="eq gana"><span class="en">Los Sobrevivientes</span><span class="es">612</span></div><div class="eq pierde"><span class="en">Rata Squad</span><span class="es">488</span></div></div><div class="m" id="q1"><div class="eq pierde"><span class="en">Team Tank</span><span class="es">530</span></div><div class="eq gana"><span class="en">Los Pibes</span><span class="es">541</span></div></div><div class="m" id="q2"><div class="eq gana"><span class="en">ElPanas</span><span class="es">702</span></div><div class="eq pierde"><span class="en">Zombi Killers</span><span class="es">455</span></div></div><div class="m" id="q3"><div class="eq pierde"><span class="en">Campestre B</span><span class="es">399</span></div><div class="eq gana"><span class="en">Medkit Gang</span><span class="es">610</span></div></div></div>
+<div class="colb c2"><div class="ct">SEMIFINAL</div><div class="m" id="s0"><div class="eq gana"><span class="en">Los Sobrevivientes</span><span class="es">655</span></div><div class="eq pierde"><span class="en">Los Pibes</span><span class="es">590</span></div></div><div class="m" id="s1"><div class="eq pierde"><span class="en">ElPanas</span><span class="es">520</span></div><div class="eq gana"><span class="en">Medkit Gang</span><span class="es">577</span></div></div></div>
+<div class="colb c3"><div class="ct">FINAL</div><div class="m pend" id="f0"><div class="eq"><span class="en">Los Sobrevivientes</span><span class="es">-</span></div><div class="eq"><span class="en">Medkit Gang</span><span class="es">-</span></div><div class="nota">sab 21:00</div></div></div>
+<div class="colb c4"><div class="ct">CAMPEON</div><div class="copa" id="cp"><div class="q">?</div><div class="cn">POR DEFINIR</div><div class="cs">final: sab 21:00</div></div></div>
+</div></div>
+<script>
+// posiciones verticales de los partidos (cada ronda centrada entre sus 2 partidos anteriores)
+var H=400,top0=26,alto=60;
+function pon(id,y){var e=document.getElementById(id);e.style.top=y+"px";return y;}
+var yq=[],ys=[],k;
+for(k=0;k<4;k++)yq.push(pon("q"+k,top0+k*(H-top0-alto)/3));
+for(k=0;k<2;k++)ys.push(pon("s"+k,(yq[2*k]+yq[2*k+1])/2));
+var yf=pon("f0",(ys[0]+ys[1])/2);
+document.getElementById("cp").style.top=(yf-10)+"px";
+/* "Dibujado a mano": trazos con temblor, dos pasadas y esquinas que se pasan */
+var _s=7;function rnd(){_s=(_s*16807)%2147483647;return (_s-1)/2147483646;}
+function j(a){return (rnd()-.5)*2*a;}
+function linea(x1,y1,x2,y2,t){t=t||1.6;var dx=x2-x1,dy=y2-y1,L=Math.sqrt(dx*dx+dy*dy)||1,n=Math.max(2,Math.round(L/40)),d="",k,p;
+ for(p=0;p<2;p++){d+="M"+(x1+j(t))+" "+(y1+j(t));for(k=1;k<=n;k++){var f=k/n;d+=" L"+(x1+dx*f+j(t*(k==n?1:.9)))+" "+(y1+dy*f+j(t*(k==n?1:.9)));}}
+ return d;}
+function caja(x,y,w,h,t){t=t||2;var o=4,d="";
+ d+=linea(x-o*rnd(),y,x+w+o*rnd(),y,t);d+=linea(x+w,y-o*rnd(),x+w,y+h+o*rnd(),t);
+ d+=linea(x+w+o*rnd(),y+h,x-o*rnd(),y+h,t);d+=linea(x,y+h+o*rnd(),x,y-o*rnd(),t);return d;}
+function ovalo(cx,cy,rx,ry){var d="",a0=j(.6),k,v=1.18;for(k=0;k<=30;k++){var a=a0+k/28*Math.PI*2*v/1.12,r=1+j(.06);
+ d+=(k?" L":"M")+(cx+Math.cos(a)*rx*r)+" "+(cy+Math.sin(a)*ry*r);}return d;}
+function tacha(x1,y,x2){var d="M"+x1+" "+(y+j(1.5)),n=Math.round((x2-x1)/14),k;for(k=1;k<=n;k++)d+=" L"+(x1+(x2-x1)*k/n)+" "+(y+(k%2?-3:3)+j(1));return d;}
+function svgCapa(id){var s=document.getElementById(id);return function(d,extra){s.innerHTML+='<path d="'+d+'" '+(extra||"")+'/>';};}
+function rel(el,base){var a=el.getBoundingClientRect(),b=base.getBoundingClientRect();return {x:a.left-b.left,y:a.top-b.top,w:a.width,h:a.height};}
+
+var br=document.getElementById("br"),dib=svgCapa("lin"),m=alto/2,k;
+// cajas de los partidos (la final pendiente, con trazo cortado)
+var ms=document.querySelectorAll(".m");
+for(k=0;k<ms.length;k++){var r=rel(ms[k],br);
+  if(ms[k].className.indexOf("pend")>=0){var x=r.x,y=r.y,w=r.w,h=r.h,i,dd="";
+    for(i=0;i<w;i+=22)dd+=linea(x+i,y,x+Math.min(i+12,w),y,1.2)+linea(x+i,y+h,x+Math.min(i+12,w),y+h,1.2);
+    for(i=0;i<h;i+=18)dd+=linea(x,y+i,x,y+Math.min(i+10,h),1.2)+linea(x+w,y+i,x+w,y+Math.min(i+10,h),1.2);
+    dib(dd);}
+  else dib(caja(r.x,r.y,r.w,r.h,1.8));}
+// el que pierde: tachado a mano | el que gana: puntaje encerrado
+var eqs=document.querySelectorAll(".eq");
+for(k=0;k<eqs.length;k++){
+  var en=eqs[k].querySelector(".en"),es=eqs[k].querySelector(".es");
+  if(eqs[k].className.indexOf("pierde")>=0){
+    var t=en.firstChild,rg=document.createRange();rg.selectNodeContents(en);var rr=rg.getBoundingClientRect(),b0=br.getBoundingClientRect();
+    dib(tacha(rr.left-b0.left-2,rr.top-b0.top+rr.height*.55,rr.right-b0.left+3),'class="fino"');}
+  if(eqs[k].className.indexOf("gana")>=0){var q=rel(es,br);dib(ovalo(q.x+q.w-14,q.y+q.h/2+1,22,13),'class="fino"');}
+}
+// lineas entre rondas
+function une(x1,y1,x2,y2){var mx=(x1+x2)/2;return linea(x1,y1,mx,y1)+linea(mx,y1,mx,y2)+linea(mx,y2,x2,y2);}
+for(k=0;k<4;k++)dib(une(232,yq[k]+m,298,ys[k>>1]+m));
+for(k=0;k<2;k++)dib(une(532,ys[k]+m,598,yf+m));
+dib(linea(832,yf+m,880,yf+m));
+// el "?" del campeon, encerrado
+var cq=rel(document.querySelector(".copa .q"),br);dib(ovalo(cq.x+cq.w/2,cq.y+cq.h/2+2,30,30));
+</script></body></html>
