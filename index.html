@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>ClubCampestre</title>
-<!-- Pagina del server (MOTD). Plantilla del plugin SR: <div class="fila r1"><span class="fp">1.</span><span class="fn">$Rc_hard</span><span class="fs">585<small>SR</small></span><span class="fw"><b>3</b> &middot; <i>1</i></span></div><div class="fila r2"><span class="fp">2.</span><span class="fn">LELORE</span><span class="fs">580<small>SR</small></span><span class="fw"><b>4</b> &middot; <i>2</i></span></div><div class="fila r3"><span class="fp">3.</span><span class="fn">LINK</span><span class="fs">573<small>SR</small></span><span class="fw"><b>10</b> &middot; <i>4</i></span></div><div class="fila r4"><span class="fp">4.</span><span class="fn">MAZETA</span><span class="fs">548<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r5"><span class="fp">5.</span><span class="fn">™DanFor (:</span><span class="fs">547<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r6"><span class="fp">6.</span><span class="fn">Slein</span><span class="fs">546<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r7"><span class="fp">7.</span><span class="fn">tdioscaqui</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r8"><span class="fp">8.</span><span class="fn">TOPO GIGIO</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r9"><span class="fp">9.</span><span class="fn">CAPITAN PE</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r10"><span class="fp">10.</span><span class="fn">Sxntanna</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div> y 14/11/2026 02:56 se rellenan solos.
+<!-- Pagina del server (MOTD). Plantilla del plugin SR: <div class="fila r1"><span class="fp">1.</span><span class="fn">$Rc_hard</span><span class="fs">585<small>SR</small></span><span class="fw"><b>3</b> &middot; <i>1</i></span></div><div class="fila r2"><span class="fp">2.</span><span class="fn">LELORE</span><span class="fs">580<small>SR</small></span><span class="fw"><b>4</b> &middot; <i>2</i></span></div><div class="fila r3"><span class="fp">3.</span><span class="fn">LINK</span><span class="fs">573<small>SR</small></span><span class="fw"><b>10</b> &middot; <i>4</i></span></div><div class="fila r4"><span class="fp">4.</span><span class="fn">MAZETA</span><span class="fs">548<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r5"><span class="fp">5.</span><span class="fn">™DanFor (:</span><span class="fs">547<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r6"><span class="fp">6.</span><span class="fn">Slein</span><span class="fs">546<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r7"><span class="fp">7.</span><span class="fn">tdioscaqui</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r8"><span class="fp">8.</span><span class="fn">TOPO GIGIO</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r9"><span class="fp">9.</span><span class="fn">CAPITAN PE</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r10"><span class="fp">10.</span><span class="fn">Sxntanna</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div> y 14/11/2026 03:03 se rellenan solos.
      Los brackets se editan con editar_torneos.html (bloques DATOS de abajo). -->
 <style>
 @font-face{font-family:'Marker';src:url(fonts/marker.woff2) format('woff2'),url(fonts/marker.woff) format('woff');font-display:swap}
@@ -18,8 +18,8 @@ body{background:#55524b;font-family:'Mano','Segoe Print','Comic Sans MS',cursive
 body{overflow:hidden}
 #vista{position:fixed;left:0;top:0;width:100%;height:100%;overflow:hidden;background:#55524b}
 #fondo{position:absolute;background:#55524b url(fondo.jpg) center center no-repeat;-webkit-background-size:cover;background-size:cover}
-#cam{position:absolute;left:0;top:0;-webkit-transform-origin:50% 50%;transform-origin:50% 50%}
 #deck{position:absolute;left:0;top:0}
+body.viaje #pE svg.lin path,body.viaje #pL svg.lin path{filter:none}
 .pant{position:absolute;left:0;top:0;white-space:normal;font-size:16px;width:100vw;height:100vh;overflow:hidden;visibility:hidden}
 .wall{max-width:720px;margin:0 auto;padding:44px 24px 20px}
 .tit{font-family:'Marker',Impact,sans-serif;font-size:38px;-webkit-transform:rotate(-2deg);transform:rotate(-2deg);letter-spacing:1px;line-height:1;display:inline-block}
@@ -197,7 +197,7 @@ body{overflow:hidden}
  "nota_abajo": ""
 };/*FIN DATOS*/</script>
 <div class="nav"><a href="#comandos" data-n="0" onclick="return ir(0)">comandos</a><a href="#top" data-n="1" onclick="return ir(1)">top 10</a><a href="#eliminatoria" data-n="2" onclick="return ir(2)">eliminatoria</a><a href="#liga" data-n="3" onclick="return ir(3)">liga</a></div>
-<div id="vista"><div id="fondo"></div><div id="cam"><div id="deck">
+<div id="vista"><div id="fondo"></div><div id="deck">
 <div class="pant" id="pC"><div class="wall">
 <div class="tit">CLUB CAMPESTRE</div>
 <div class="sub">COMANDOS</div>
@@ -207,7 +207,7 @@ body{overflow:hidden}
 <div class="pant" id="pT"><div class="wall">
 <span class="tt">TOP 10</span><span class="ts">los que mas SR tienen</span>
 <div id="lista"><div class="fila r1"><span class="fp">1.</span><span class="fn">$Rc_hard</span><span class="fs">585<small>SR</small></span><span class="fw"><b>3</b> &middot; <i>1</i></span></div><div class="fila r2"><span class="fp">2.</span><span class="fn">LELORE</span><span class="fs">580<small>SR</small></span><span class="fw"><b>4</b> &middot; <i>2</i></span></div><div class="fila r3"><span class="fp">3.</span><span class="fn">LINK</span><span class="fs">573<small>SR</small></span><span class="fw"><b>10</b> &middot; <i>4</i></span></div><div class="fila r4"><span class="fp">4.</span><span class="fn">MAZETA</span><span class="fs">548<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r5"><span class="fp">5.</span><span class="fn">™DanFor (:</span><span class="fs">547<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r6"><span class="fp">6.</span><span class="fn">Slein</span><span class="fs">546<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r7"><span class="fp">7.</span><span class="fn">tdioscaqui</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r8"><span class="fp">8.</span><span class="fn">TOPO GIGIO</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r9"><span class="fp">9.</span><span class="fn">CAPITAN PE</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r10"><span class="fp">10.</span><span class="fn">Sxntanna</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div></div>
-<div class="upd">actualizado 14/11/2026 02:56</div>
+<div class="upd">actualizado 14/11/2026 03:03</div>
 </div></div>
 <div class="pant" id="pE"><div class="wall">
 <div class="tit" id="de_tit"></div> <div class="hint" id="de_nota"></div>
@@ -224,49 +224,46 @@ body{overflow:hidden}
 <div class="pasan" id="pasan">&larr; pasan</div>
 </div>
 </div></div>
-</div></div></div>
+</div></div>
 <script>
 var PANT=["comandos","top","eliminatoria","liga"],actual=0,viaje=null;
-/* ---- "camara": la pantalla nueva esta en otro lugar de la pared (direccion al azar);
-   la camara se aleja, viaja y se acerca. Hecho con transiciones CSS (las anima el propio
-   navegador; el del juego no dibuja bien las animaciones hechas cuadro a cuadro con JS). ---- */
-var DURA=1300;            /* milisegundos que dura el viaje */
+/* ---- "camara": cada seccion tiene su lugar en una pared grande (lugares al azar cada vez
+   que se abre la pagina) y la camara se desliza de una a otra. El fondo se mueve con la
+   camara y nunca vuelve atras. Solo traslada (sin zoom): asi el navegador del juego va fluido. ---- */
+var DURA=1000;            /* milisegundos que dura el viaje */
+var LUGAR=(function(){var c=[],i,j;for(i=0;i<9;i++)c.push(i);
+  for(i=c.length-1;i>0;i--){j=Math.floor(Math.random()*(i+1));var x=c[i];c[i]=c[j];c[j]=x;}
+  return c.slice(0,4);})();   /* casilla (de una grilla de 3x3) de cada seccion */
 function tam(){return {W:window.innerWidth||document.documentElement.clientWidth,H:window.innerHeight||document.documentElement.clientHeight};}
 function $i(id){return document.getElementById(id);}
-function medidas(){
-  var t=tam(),p=document.querySelectorAll(".pant"),c=$i("cam"),m=$i("deck"),f=$i("fondo");
-  for(var i=0;i<p.length;i++){p[i].style.width=t.W+"px";p[i].style.height=t.H+"px";}
-  c.style.width=m.style.width=t.W+"px";c.style.height=m.style.height=t.H+"px";
-  f.style.width=(t.W*1.6)+"px";f.style.height=(t.H*1.6)+"px";f.style.left=(-t.W*.3)+"px";f.style.top=(-t.H*.3)+"px";
-  return t;
-}
+function pos(n,t){var k=LUGAR[n];return {x:Math.round(((k%3)-1)*t.W*1.12),y:Math.round((Math.floor(k/3)-1)*t.H*1.12)};}
 function tf(el,v){el.style.webkitTransform=v;el.style.transform=v;}
 function tr(el,v){el.style.webkitTransition=v?"-webkit-"+v:"none";el.style.transition=v||"none";}
-function pon(el,x,y){el.style.left=x+"px";el.style.top=y+"px";}
-function mostrar(n){var p=document.querySelectorAll(".pant");for(var i=0;i<p.length;i++){p[i].style.visibility=(i==n)?"visible":"hidden";pon(p[i],0,0);}}
-function marcar(n){var a=document.querySelectorAll(".nav a");for(var i=0;i<a.length;i++)a[i].className=(i==n)?"aqui":"";}
-function quieto(n){
-  if(viaje){clearTimeout(viaje.a);clearTimeout(viaje.b);viaje=null;}
-  var c=$i("cam"),m=$i("deck"),f=$i("fondo");
-  tr(c,"");tr(m,"");tr(f,"");tf(c,"none");tf(m,"none");tf(f,"none");mostrar(n);actual=n;
+function camara(n,t){
+  var p=pos(n,t);
+  tf($i("deck"),"translate3d("+(-p.x)+"px,"+(-p.y)+"px,0)");
+  tf($i("fondo"),"translate3d("+Math.round(-p.x*.2)+"px,"+Math.round(-p.y*.2)+"px,0)");
 }
+function medidas(){
+  var t=tam(),p=document.querySelectorAll(".pant"),m=$i("deck"),f=$i("fondo");
+  for(var i=0;i<p.length;i++){var q=pos(i,t);p[i].style.width=t.W+"px";p[i].style.height=t.H+"px";p[i].style.left=q.x+"px";p[i].style.top=q.y+"px";}
+  m.style.width=t.W+"px";m.style.height=t.H+"px";
+  f.style.width=(t.W*2)+"px";f.style.height=(t.H*2)+"px";f.style.left=(-t.W*.5)+"px";f.style.top=(-t.H*.5)+"px";
+  return t;
+}
+function mostrar(a,b){var p=document.querySelectorAll(".pant");for(var i=0;i<p.length;i++)p[i].style.visibility=(i==a||i==b)?"visible":"hidden";}
+function marcar(n){var a=document.querySelectorAll(".nav a");for(var i=0;i<a.length;i++)a[i].className=(i==n)?"aqui":"";}
 function mover(n,animar){
-  var t=medidas();marcar(n);
-  if(!animar||n==actual){quieto(n);return;}
-  quieto(actual);
-  var p=document.querySelectorAll(".pant"),c=$i("cam"),m=$i("deck"),f=$i("fondo");
-  /* direccion totalmente al azar (cualquier angulo) */
-  var ang=Math.random()*Math.PI*2,dx=Math.cos(ang),dy=Math.sin(ang),k=1/Math.max(Math.abs(dx),Math.abs(dy));
-  var DX=Math.round(dx*k*t.W*1.25),DY=Math.round(dy*k*t.H*1.25);
-  var s=(1-(.32+Math.random()*.12)).toFixed(3),r=(Math.random()*6-3).toFixed(2),mitad=DURA/2;
-  pon(p[n],DX,DY);p[n].style.visibility="visible";
-  m.offsetWidth;   /* que el navegador tome la posicion inicial antes de animar */
-  tr(m,"transform "+DURA+"ms cubic-bezier(.65,0,.35,1)");tf(m,"translate3d("+(-DX)+"px,"+(-DY)+"px,0)");
-  tr(f,"transform "+DURA+"ms cubic-bezier(.65,0,.35,1)");tf(f,"translate3d("+Math.round(-DX*.18)+"px,"+Math.round(-DY*.18)+"px,0)");
-  tr(c,"transform "+mitad+"ms cubic-bezier(.3,0,.5,1)");tf(c,"scale("+s+") rotate("+r+"deg)");
-  var yo={};viaje=yo;
-  yo.a=setTimeout(function(){tr(c,"transform "+mitad+"ms cubic-bezier(.5,0,.7,1)");tf(c,"scale(1) rotate(0deg)");},mitad);
-  yo.b=setTimeout(function(){if(viaje===yo){viaje=null;quieto(n);}},DURA+60);
+  var t=medidas(),m=$i("deck"),f=$i("fondo");marcar(n);
+  if(viaje){clearTimeout(viaje);viaje=null;}
+  if(!animar||n==actual){tr(m,"");tr(f,"");document.body.className="";mostrar(n,n);camara(n,t);actual=n;return;}
+  mostrar(actual,n);
+  document.body.className="viaje";   /* sin el efecto de tiza mientras viaja: mas fluido */
+  m.offsetWidth;
+  var curva=" "+DURA+"ms cubic-bezier(.45,0,.25,1)";
+  tr(m,"transform"+curva);tr(f,"transform"+curva);
+  camara(n,t);
+  viaje=setTimeout(function(){viaje=null;document.body.className="";mostrar(n,n);},DURA+50);
   actual=n;
 }
 function ir(n){mover(n,true);try{history.replaceState(null,"","#"+PANT[n]);}catch(e){}return false;}
