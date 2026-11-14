@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>ClubCampestre</title>
-<!-- Pagina del server (MOTD). Plantilla del plugin SR: <div class="fila r1"><span class="fp">1.</span><span class="fn">$Rc_hard</span><span class="fs">585<small>SR</small></span><span class="fw"><b>3</b> &middot; <i>1</i></span></div><div class="fila r2"><span class="fp">2.</span><span class="fn">LELORE</span><span class="fs">580<small>SR</small></span><span class="fw"><b>4</b> &middot; <i>2</i></span></div><div class="fila r3"><span class="fp">3.</span><span class="fn">LINK</span><span class="fs">573<small>SR</small></span><span class="fw"><b>10</b> &middot; <i>4</i></span></div><div class="fila r4"><span class="fp">4.</span><span class="fn">MAZETA</span><span class="fs">548<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r5"><span class="fp">5.</span><span class="fn">™DanFor (:</span><span class="fs">547<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r6"><span class="fp">6.</span><span class="fn">Slein</span><span class="fs">546<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r7"><span class="fp">7.</span><span class="fn">tdioscaqui</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r8"><span class="fp">8.</span><span class="fn">TOPO GIGIO</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r9"><span class="fp">9.</span><span class="fn">CAPITAN PE</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r10"><span class="fp">10.</span><span class="fn">Sxntanna</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div> y 14/11/2026 03:03 se rellenan solos.
+<!-- Pagina del server (MOTD). Plantilla del plugin SR: <div class="fila r1"><span class="fp">1.</span><span class="fn">$Rc_hard</span><span class="fs">585<small>SR</small></span><span class="fw"><b>3</b> &middot; <i>1</i></span></div><div class="fila r2"><span class="fp">2.</span><span class="fn">LELORE</span><span class="fs">580<small>SR</small></span><span class="fw"><b>4</b> &middot; <i>2</i></span></div><div class="fila r3"><span class="fp">3.</span><span class="fn">LINK</span><span class="fs">573<small>SR</small></span><span class="fw"><b>10</b> &middot; <i>4</i></span></div><div class="fila r4"><span class="fp">4.</span><span class="fn">MAZETA</span><span class="fs">548<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r5"><span class="fp">5.</span><span class="fn">™DanFor (:</span><span class="fs">547<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r6"><span class="fp">6.</span><span class="fn">Slein</span><span class="fs">546<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r7"><span class="fp">7.</span><span class="fn">tdioscaqui</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r8"><span class="fp">8.</span><span class="fn">TOPO GIGIO</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r9"><span class="fp">9.</span><span class="fn">CAPITAN PE</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r10"><span class="fp">10.</span><span class="fn">Sxntanna</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div> y 14/11/2026 03:10 se rellenan solos.
      Los brackets se editan con editar_torneos.html (bloques DATOS de abajo). -->
 <style>
 @font-face{font-family:'Marker';src:url(fonts/marker.woff2) format('woff2'),url(fonts/marker.woff) format('woff');font-display:swap}
@@ -17,7 +17,8 @@ body{background:#55524b;font-family:'Mano','Segoe Print','Comic Sans MS',cursive
 .p,.c,.t,.d,.a,.tit,.sub,.hint,.fila,.tt,.ts,.stencil,.tally,.upd,.vacio{color:#f4f1e8;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
 body{overflow:hidden}
 #vista{position:fixed;left:0;top:0;width:100%;height:100%;overflow:hidden;background:#55524b}
-#fondo{position:absolute;background:#55524b url(fondo.jpg) center center no-repeat;-webkit-background-size:cover;background-size:cover}
+#fondo{position:absolute;background:#55524b url(fondo.jpg) 0 0 repeat}
+#vineta{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;background:-webkit-radial-gradient(center,ellipse cover,rgba(0,0,0,0) 45%,rgba(0,0,0,.42) 100%);background:radial-gradient(ellipse at center,rgba(0,0,0,0) 45%,rgba(0,0,0,.42) 100%)}
 #deck{position:absolute;left:0;top:0}
 body.viaje #pE svg.lin path,body.viaje #pL svg.lin path{filter:none}
 .pant{position:absolute;left:0;top:0;white-space:normal;font-size:16px;width:100vw;height:100vh;overflow:hidden;visibility:hidden}
@@ -197,7 +198,7 @@ body.viaje #pE svg.lin path,body.viaje #pL svg.lin path{filter:none}
  "nota_abajo": ""
 };/*FIN DATOS*/</script>
 <div class="nav"><a href="#comandos" data-n="0" onclick="return ir(0)">comandos</a><a href="#top" data-n="1" onclick="return ir(1)">top 10</a><a href="#eliminatoria" data-n="2" onclick="return ir(2)">eliminatoria</a><a href="#liga" data-n="3" onclick="return ir(3)">liga</a></div>
-<div id="vista"><div id="fondo"></div><div id="deck">
+<div id="vista"><div id="fondo"></div><div id="vineta"></div><div id="deck">
 <div class="pant" id="pC"><div class="wall">
 <div class="tit">CLUB CAMPESTRE</div>
 <div class="sub">COMANDOS</div>
@@ -207,7 +208,7 @@ body.viaje #pE svg.lin path,body.viaje #pL svg.lin path{filter:none}
 <div class="pant" id="pT"><div class="wall">
 <span class="tt">TOP 10</span><span class="ts">los que mas SR tienen</span>
 <div id="lista"><div class="fila r1"><span class="fp">1.</span><span class="fn">$Rc_hard</span><span class="fs">585<small>SR</small></span><span class="fw"><b>3</b> &middot; <i>1</i></span></div><div class="fila r2"><span class="fp">2.</span><span class="fn">LELORE</span><span class="fs">580<small>SR</small></span><span class="fw"><b>4</b> &middot; <i>2</i></span></div><div class="fila r3"><span class="fp">3.</span><span class="fn">LINK</span><span class="fs">573<small>SR</small></span><span class="fw"><b>10</b> &middot; <i>4</i></span></div><div class="fila r4"><span class="fp">4.</span><span class="fn">MAZETA</span><span class="fs">548<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r5"><span class="fp">5.</span><span class="fn">™DanFor (:</span><span class="fs">547<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r6"><span class="fp">6.</span><span class="fn">Slein</span><span class="fs">546<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r7"><span class="fp">7.</span><span class="fn">tdioscaqui</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r8"><span class="fp">8.</span><span class="fn">TOPO GIGIO</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r9"><span class="fp">9.</span><span class="fn">CAPITAN PE</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r10"><span class="fp">10.</span><span class="fn">Sxntanna</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div></div>
-<div class="upd">actualizado 14/11/2026 03:03</div>
+<div class="upd">actualizado 14/11/2026 03:10</div>
 </div></div>
 <div class="pant" id="pE"><div class="wall">
 <div class="tit" id="de_tit"></div> <div class="hint" id="de_nota"></div>
@@ -231,6 +232,7 @@ var PANT=["comandos","top","eliminatoria","liga"],actual=0,viaje=null;
    que se abre la pagina) y la camara se desliza de una a otra. El fondo se mueve con la
    camara y nunca vuelve atras. Solo traslada (sin zoom): asi el navegador del juego va fluido. ---- */
 var DURA=1000;            /* milisegundos que dura el viaje */
+var FONDO_VEL=1;          /* velocidad del fondo: 1 = igual que la camara | 0.2 = "fondo con profundidad" (mas lento) */
 var LUGAR=(function(){var c=[],i,j;for(i=0;i<9;i++)c.push(i);
   for(i=c.length-1;i>0;i--){j=Math.floor(Math.random()*(i+1));var x=c[i];c[i]=c[j];c[j]=x;}
   return c.slice(0,4);})();   /* casilla (de una grilla de 3x3) de cada seccion */
@@ -242,13 +244,14 @@ function tr(el,v){el.style.webkitTransition=v?"-webkit-"+v:"none";el.style.trans
 function camara(n,t){
   var p=pos(n,t);
   tf($i("deck"),"translate3d("+(-p.x)+"px,"+(-p.y)+"px,0)");
-  tf($i("fondo"),"translate3d("+Math.round(-p.x*.2)+"px,"+Math.round(-p.y*.2)+"px,0)");
+  tf($i("fondo"),"translate3d("+Math.round(-p.x*FONDO_VEL)+"px,"+Math.round(-p.y*FONDO_VEL)+"px,0)");
 }
 function medidas(){
   var t=tam(),p=document.querySelectorAll(".pant"),m=$i("deck"),f=$i("fondo");
   for(var i=0;i<p.length;i++){var q=pos(i,t);p[i].style.width=t.W+"px";p[i].style.height=t.H+"px";p[i].style.left=q.x+"px";p[i].style.top=q.y+"px";}
   m.style.width=t.W+"px";m.style.height=t.H+"px";
-  f.style.width=(t.W*2)+"px";f.style.height=(t.H*2)+"px";f.style.left=(-t.W*.5)+"px";f.style.top=(-t.H*.5)+"px";
+  var mg=Math.ceil(Math.max(t.W,t.H)*1.25*FONDO_VEL)+40;   /* el fondo se repite sin costuras, asi alcanza para toda la pared */
+  f.style.width=(t.W+2*mg)+"px";f.style.height=(t.H+2*mg)+"px";f.style.left=(-mg)+"px";f.style.top=(-mg)+"px";
   return t;
 }
 function mostrar(a,b){var p=document.querySelectorAll(".pant");for(var i=0;i<p.length;i++)p[i].style.visibility=(i==a||i==b)?"visible":"hidden";}
