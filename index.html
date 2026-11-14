@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>ClubCampestre</title>
-<!-- Pagina del server (MOTD). Plantilla del plugin SR: <div class="fila r1"><span class="fp">1.</span><span class="fn">$Rc_hard</span><span class="fs">585<small>SR</small></span><span class="fw"><b>3</b> &middot; <i>1</i></span></div><div class="fila r2"><span class="fp">2.</span><span class="fn">LELORE</span><span class="fs">580<small>SR</small></span><span class="fw"><b>4</b> &middot; <i>2</i></span></div><div class="fila r3"><span class="fp">3.</span><span class="fn">LINK</span><span class="fs">573<small>SR</small></span><span class="fw"><b>10</b> &middot; <i>4</i></span></div><div class="fila r4"><span class="fp">4.</span><span class="fn">MAZETA</span><span class="fs">548<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r5"><span class="fp">5.</span><span class="fn">™DanFor (:</span><span class="fs">547<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r6"><span class="fp">6.</span><span class="fn">Slein</span><span class="fs">546<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r7"><span class="fp">7.</span><span class="fn">tdioscaqui</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r8"><span class="fp">8.</span><span class="fn">TOPO GIGIO</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r9"><span class="fp">9.</span><span class="fn">CAPITAN PE</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r10"><span class="fp">10.</span><span class="fn">Sxntanna</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div> y 14/11/2026 02:03 se rellenan solos.
+<!-- Pagina del server (MOTD). Plantilla del plugin SR: <div class="fila r1"><span class="fp">1.</span><span class="fn">$Rc_hard</span><span class="fs">585<small>SR</small></span><span class="fw"><b>3</b> &middot; <i>1</i></span></div><div class="fila r2"><span class="fp">2.</span><span class="fn">LELORE</span><span class="fs">580<small>SR</small></span><span class="fw"><b>4</b> &middot; <i>2</i></span></div><div class="fila r3"><span class="fp">3.</span><span class="fn">LINK</span><span class="fs">573<small>SR</small></span><span class="fw"><b>10</b> &middot; <i>4</i></span></div><div class="fila r4"><span class="fp">4.</span><span class="fn">MAZETA</span><span class="fs">548<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r5"><span class="fp">5.</span><span class="fn">™DanFor (:</span><span class="fs">547<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r6"><span class="fp">6.</span><span class="fn">Slein</span><span class="fs">546<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r7"><span class="fp">7.</span><span class="fn">tdioscaqui</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r8"><span class="fp">8.</span><span class="fn">TOPO GIGIO</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r9"><span class="fp">9.</span><span class="fn">CAPITAN PE</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r10"><span class="fp">10.</span><span class="fn">Sxntanna</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div> y 14/11/2026 02:18 se rellenan solos.
      Los brackets se editan con editar_torneos.html (bloques DATOS de abajo). -->
 <style>
 @font-face{font-family:'Marker';src:url(fonts/marker.woff2) format('woff2'),url(fonts/marker.woff) format('woff');font-display:swap}
@@ -57,12 +57,11 @@ body{overflow:hidden}
 #pE .tit{font-family:'Marker',Impact,sans-serif;font-size:36px;-webkit-transform:rotate(-2deg);transform:rotate(-2deg);display:inline-block;line-height:1;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
 #pE .sub{font-family:'Elite',monospace;font-size:14px;letter-spacing:3px;margin:8px 0 0 6px;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
 #pE .hint{font-family:'Mano';font-size:21px;margin:0 0 0 30px;-webkit-transform:rotate(-3deg);transform:rotate(-3deg);display:inline-block;opacity:.9;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
+#pE.pant{overflow-y:auto;overflow-x:hidden}
 #pE .br{position:relative;margin-top:10px;height:370px}
+#pE #brz{position:absolute;left:0;top:0;-webkit-transform-origin:0 0;transform-origin:0 0}
 #pE .colb{position:absolute;top:0;bottom:0;width:190px}
-#pE .c1{left:0}
-#pE .c2{left:245px}
-#pE .c3{left:490px}
-#pE .c4{left:685px;width:145px}
+#pE .m.bye{opacity:.75}
 #pE .ct{font-family:'Marker',Impact,sans-serif;font-size:18px;letter-spacing:2px;position:absolute;top:-4px;left:6px;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
 #pE .m{position:absolute;left:0;right:0;padding:5px 8px}
 #pE .eq{font-size:0;white-space:nowrap;line-height:1}
@@ -206,18 +205,15 @@ body{overflow:hidden}
 <div class="pant" id="pT"><div class="wall">
 <span class="tt">TOP 10</span><span class="ts">los que mas SR tienen</span>
 <div id="lista"><div class="fila r1"><span class="fp">1.</span><span class="fn">$Rc_hard</span><span class="fs">585<small>SR</small></span><span class="fw"><b>3</b> &middot; <i>1</i></span></div><div class="fila r2"><span class="fp">2.</span><span class="fn">LELORE</span><span class="fs">580<small>SR</small></span><span class="fw"><b>4</b> &middot; <i>2</i></span></div><div class="fila r3"><span class="fp">3.</span><span class="fn">LINK</span><span class="fs">573<small>SR</small></span><span class="fw"><b>10</b> &middot; <i>4</i></span></div><div class="fila r4"><span class="fp">4.</span><span class="fn">MAZETA</span><span class="fs">548<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r5"><span class="fp">5.</span><span class="fn">™DanFor (:</span><span class="fs">547<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r6"><span class="fp">6.</span><span class="fn">Slein</span><span class="fs">546<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r7"><span class="fp">7.</span><span class="fn">tdioscaqui</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r8"><span class="fp">8.</span><span class="fn">TOPO GIGIO</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r9"><span class="fp">9.</span><span class="fn">CAPITAN PE</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div><div class="fila r10"><span class="fp">10.</span><span class="fn">Sxntanna</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1</b> &middot; <i>0</i></span></div></div>
-<div class="upd">actualizado 14/11/2026 02:03</div>
+<div class="upd">actualizado 14/11/2026 02:18</div>
 </div></div>
 <div class="pant" id="pE"><div class="wall">
 <div class="tit" id="de_tit"></div> <div class="hint" id="de_nota"></div>
 <div class="sub" id="de_desc"></div>
-<div class="br" id="br">
+<div class="br" id="br"><div id="brz">
 <svg class="lin" id="linE"><defs><filter id="tizaE" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3" result="r"/><feDisplacementMap in="SourceGraphic" in2="r" scale="2.6"/></filter></defs></svg>
-<div class="colb c1"><div class="ct">CUARTOS</div><div id="col_q"></div></div>
-<div class="colb c2"><div class="ct">SEMIFINAL</div><div id="col_s"></div></div>
-<div class="colb c3"><div class="ct">FINAL</div><div id="col_f"></div></div>
-<div class="colb c4"><div class="ct">CAMPEON</div><div class="copa" id="cp"></div></div>
-</div></div></div>
+<div id="brc"></div>
+</div></div></div></div>
 <div class="pant" id="pL"><div class="wall">
 <div class="tit" id="dl_tit"></div> <div class="hint" id="dl_nota"></div>
 <div class="sub" id="dl_desc"></div>
@@ -250,41 +246,57 @@ function ir(n){mover(n,true);try{history.replaceState(null,"","#"+PANT[n]);}catc
 window.onresize=function(){mover(actual,false);};
 
 function initE(){
-// ---- arma el bracket con los DATOS (arriba) ----
+// ---- arma el bracket con los DATOS (arriba). Sirve para 4, 8, 16 o 32 equipos ----
 function esc(t){return String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
 function num(v){return (v===""||v==null||isNaN(parseInt(v,10)))?null:parseInt(v,10);}
-function ganador(p){var a=num(p[1]),b=num(p[3]);if(a==null||b==null||a==b)return "";return a>b?p[0]:p[2];}
-function partido(p,id){
-  var a=num(p[1]),b=num(p[3]),jugado=(a!=null&&b!=null),wa=jugado&&a>b,wb=jugado&&b>a,h="";
-  function eq(n,pt,gana,pierde){return '<div class="eq'+(gana?" gana":"")+(pierde?" pierde":"")+'"><span class="en"><span class="tx">'+(esc(n)||"&nbsp;")+'</span></span><span class="es">'+(pt==null?"-":pt)+'</span></div>';}
-  h+=eq(p[0],a,wa,wb)+eq(p[2],b,wb,wa);
-  if(!jugado&&p[4])h+='<div class="nota">'+esc(p[4])+'</div>';
-  return '<div class="m'+(jugado?"":" pend")+'" id="'+id+'">'+h+'</div>';
-}
-(function(){
-  var T=TORNEO,k,hq="",hs="";
-  document.getElementById("de_tit").innerHTML=esc(T.titulo);
-  document.getElementById("de_nota").innerHTML=esc(T.nota);
-  document.getElementById("de_desc").innerHTML=esc(T.descripcion);
-  for(k=0;k<4;k++)hq+=partido(T.cuartos[k],"q"+k);
-  for(k=0;k<2;k++){var s=T.semis[k].slice();if(!s[0])s[0]=ganador(T.cuartos[2*k]);if(!s[2])s[2]=ganador(T.cuartos[2*k+1]);T.semis[k]=s;hs+=partido(s,"s"+k);}
-  var f=T.final.slice();if(!f[0])f[0]=ganador(T.semis[0]);if(!f[2])f[2]=ganador(T.semis[1]);
-  document.getElementById("col_q").innerHTML=hq;
-  document.getElementById("col_s").innerHTML=hs;
-  document.getElementById("col_f").innerHTML=partido(f,"f0");
-  var c=T.campeon||ganador(f);
-  document.getElementById("cp").innerHTML=c?'<div class="q">&#9733;</div><div class="cn">'+esc(c)+'</div><div class="cs">campeon</div>'
-                                           :'<div class="q">?</div><div class="cn">POR DEFINIR</div><div class="cs">'+(f[4]?"final: "+esc(f[4]):"")+'</div>';
-})();
+function esBye(n){return String(n||"").trim().toUpperCase()=="BYE";}
+function ganador(p){if(esBye(p[0])&&p[2]&&!esBye(p[2]))return p[2];if(esBye(p[2])&&p[0]&&!esBye(p[0]))return p[0];
+  var a=num(p[1]),b=num(p[3]);if(a==null||b==null||a==b)return "";return a>b?p[0]:p[2];}
+function vacio(){return ["","","","",""];}
+var T=TORNEO,R=T.rondas,r,k;
+if(!R||!R.length)R=[T.cuartos||[],T.semis||[],[T.final||vacio()]];
+var n0=1;while(n0<(R[0]||[]).length)n0*=2;if(n0<1)n0=1;
+var NR=1,t=n0;while(t>1){t/=2;NR++;}
+var RS=[];
+for(r=0;r<NR;r++){var cant=n0>>r,src=R[r]||[],fila=[];
+  for(k=0;k<cant;k++){var p=(src[k]||vacio()).slice();while(p.length<5)p.push("");
+    if(r>0){if(!p[0])p[0]=ganador(RS[r-1][2*k]);if(!p[2])p[2]=ganador(RS[r-1][2*k+1]);}
+    fila.push(p);}
+  RS.push(fila);}
+var NOM=["FINAL","SEMIFINAL","CUARTOS","OCTAVOS","16AVOS","32AVOS"];
+function nombreRonda(r){var d=NR-1-r;return (T.nombres_rondas&&T.nombres_rondas[r])||NOM[d]||("RONDA "+(r+1));}
 
-// posiciones verticales de los partidos (cada ronda centrada entre sus 2 partidos anteriores)
-var H=370,top0=26,alto=56;
-function pon(id,y){var e=document.getElementById(id);e.style.top=y+"px";return y;}
-var yq=[],ys=[],k;
-for(k=0;k<4;k++)yq.push(pon("q"+k,top0+k*(H-top0-alto)/3));
-for(k=0;k<2;k++)ys.push(pon("s"+k,(yq[2*k]+yq[2*k+1])/2));
-var yf=pon("f0",(ys[0]+ys[1])/2);
-document.getElementById("cp").style.top=(yf-10)+"px";
+function partido(p,id){
+  var a=num(p[1]),b=num(p[3]),bye=esBye(p[0])||esBye(p[2]),g=ganador(p),jugado=(a!=null&&b!=null)||(bye&&g),
+      wa=jugado&&g&&g==p[0],wb=jugado&&g&&g==p[2],h="";
+  function eq(n,pt,gana,pierde){return '<div class="eq'+(gana?" gana":"")+(pierde?" pierde":"")+'"><span class="en"><span class="tx">'+(esc(n)||"&nbsp;")+'</span></span><span class="es">'+(pt==null?(bye?"":"-"):pt)+'</span></div>';}
+  h+=eq(p[0],a,wa&&!bye,wb)+eq(p[2],b,wb&&!bye,wa);
+  if(!jugado&&p[4])h+='<div class="nota">'+esc(p[4])+'</div>';
+  return '<div class="m'+(jugado?"":" pend")+(bye?" bye":"")+'" id="'+id+'">'+h+'</div>';
+}
+document.getElementById("de_tit").innerHTML=esc(T.titulo);
+document.getElementById("de_nota").innerHTML=esc(T.nota);
+document.getElementById("de_desc").innerHTML=esc(T.descripcion);
+
+// medidas "naturales" (despues se achica todo junto para que entre en la pantalla)
+var ANCHO=190,PASO=245,ALTO=56,TOP0=26,ANCHOC=150;
+var paso1=n0>1?Math.min(120,Math.max(ALTO+14,(370-TOP0-ALTO)/(n0-1))):0;
+var Y=[],h="";
+for(r=0;r<NR;r++){Y.push([]);
+  h+='<div class="colb" style="left:'+(r*PASO)+'px;width:'+ANCHO+'px"><div class="ct">'+esc(nombreRonda(r))+'</div>';
+  for(k=0;k<RS[r].length;k++){var y=r==0?TOP0+k*paso1:(Y[r-1][2*k]+Y[r-1][2*k+1])/2;Y[r].push(y);
+    h+=partido(RS[r][k],"m"+r+"_"+k).replace('class="m','style="top:'+y+'px" class="m');}
+  h+='</div>';}
+var xc=NR*PASO-55,yf=Y[NR-1][0];
+var fin=RS[NR-1][0],c=T.campeon||ganador(fin);
+h+='<div class="colb" style="left:'+xc+'px;width:'+ANCHOC+'px"><div class="ct">CAMPEON</div><div class="copa" id="cp" style="top:'+(yf-10)+'px">'+
+  (c?'<div class="q">&#9733;</div><div class="cn">'+esc(c)+'</div><div class="cs">campeon</div>'
+    :'<div class="q">?</div><div class="cn">POR DEFINIR</div><div class="cs">'+(fin[4]?"final: "+esc(fin[4]):"")+'</div>')+'</div></div>';
+var natW=xc+ANCHOC+10,natH=Math.max(TOP0+(n0-1)*paso1+ALTO+24,yf+130);
+var br=document.getElementById("br"),bz=document.getElementById("brz");
+document.getElementById("brc").innerHTML=h;
+bz.style.width=natW+"px";bz.style.height=natH+"px";
+
 /* "Dibujado a mano": trazos con temblor, dos pasadas y esquinas que se pasan */
 var _s=7;function rnd(){_s=(_s*16807)%2147483647;return (_s-1)/2147483646;}
 function j(a){return (rnd()-.5)*2*a;}
@@ -300,35 +312,41 @@ function tacha(x1,y,x2){var d="M"+x1+" "+(y+j(1.5)),n=Math.round((x2-x1)/14),k;f
 function svgCapa(id){var s=document.getElementById(id),NS="http://www.w3.org/2000/svg";return function(d,cls,st){var p=document.createElementNS(NS,"path");p.setAttribute("d",d);if(cls)p.setAttribute("class",cls);if(st)p.setAttribute("style",st);s.appendChild(p);};}
 function rel(el,base){var a=el.getBoundingClientRect(),b=base.getBoundingClientRect();return {x:a.left-b.left,y:a.top-b.top,w:a.width,h:a.height};}
 
-var br=document.getElementById("br"),dib=svgCapa("linE"),m=alto/2,k;
-// cajas de los partidos (la final pendiente, con trazo cortado)
-var ms=document.querySelectorAll(".m");
-for(k=0;k<ms.length;k++){var r=rel(ms[k],br);
-  if(ms[k].className.indexOf("pend")>=0){var x=r.x,y=r.y,w=r.w,h=r.h,i,dd="";
-    for(i=0;i<w;i+=22)dd+=linea(x+i,y,x+Math.min(i+12,w),y,1.2)+linea(x+i,y+h,x+Math.min(i+12,w),y+h,1.2);
-    for(i=0;i<h;i+=18)dd+=linea(x,y+i,x,y+Math.min(i+10,h),1.2)+linea(x+w,y+i,x+w,y+Math.min(i+10,h),1.2);
+// se dibuja a tamano natural (escala 1) y recien despues se achica
+bz.style.webkitTransform=bz.style.transform="none";
+var dib=svgCapa("linE");
+var ms=bz.querySelectorAll(".m");
+for(k=0;k<ms.length;k++){var q=rel(ms[k],bz);
+  if(ms[k].className.indexOf("pend")>=0){var x=q.x,y=q.y,w=q.w,hh=q.h,i,dd="";
+    for(i=0;i<w;i+=22)dd+=linea(x+i,y,x+Math.min(i+12,w),y,1.2)+linea(x+i,y+hh,x+Math.min(i+12,w),y+hh,1.2);
+    for(i=0;i<hh;i+=18)dd+=linea(x,y+i,x,y+Math.min(i+10,hh),1.2)+linea(x+w,y+i,x+w,y+Math.min(i+10,hh),1.2);
     dib(dd);}
-  else dib(caja(r.x,r.y,r.w,r.h,1.8));}
-// el que pierde: tachado a mano | el que gana: puntaje encerrado
-var eqs=document.querySelectorAll(".eq");
+  else dib(caja(q.x,q.y,q.w,q.h,1.8));}
+var eqs=bz.querySelectorAll(".eq");
 for(k=0;k<eqs.length;k++){
   var en=eqs[k].querySelector(".en"),es=eqs[k].querySelector(".es");
-  if(eqs[k].className.indexOf("pierde")>=0){
-    var tx=rel(en.querySelector(".tx"),br);
+  if(eqs[k].className.indexOf("pierde")>=0){var tx=rel(en.querySelector(".tx"),bz);
     dib(tacha(tx.x-2,tx.y+tx.h*.55,tx.x+tx.w+3),"fino");}
-  if(eqs[k].className.indexOf("gana")>=0){var q=rel(es,br);dib(ovalo(q.x+q.w-14,q.y+q.h/2+1,22,14),"fino");}
+  if(eqs[k].className.indexOf("gana")>=0){var qq=rel(es,bz);dib(ovalo(qq.x+qq.w-14,qq.y+qq.h/2+1,22,14),"fino");}
 }
-// lineas entre rondas
 function une(x1,y1,x2,y2){var mx=(x1+x2)/2;return linea(x1,y1,mx,y1)+linea(mx,y1,mx,y2)+linea(mx,y2,x2,y2);}
-function bx(id){return rel(document.getElementById(id),br);}
-var Q=[bx("q0"),bx("q1"),bx("q2"),bx("q3")],S=[bx("s0"),bx("s1")],F=bx("f0"),C=rel(document.querySelector(".copa"),br);
-function cy(r){return r.y+r.h/2;}
-for(k=0;k<4;k++)dib(une(Q[k].x+Q[k].w+2,cy(Q[k]),S[k>>1].x-2,cy(S[k>>1])));
-for(k=0;k<2;k++)dib(une(S[k].x+S[k].w+2,cy(S[k]),F.x-2,cy(F)));
+function bx(id){return rel(document.getElementById(id),bz);}
+function cy(q){return q.y+q.h/2;}
+for(r=1;r<NR;r++)for(k=0;k<RS[r-1].length;k++){var A=bx("m"+(r-1)+"_"+k),B=bx("m"+r+"_"+(k>>1));dib(une(A.x+A.w+2,cy(A),B.x-2,cy(B)));}
+var F=bx("m"+(NR-1)+"_0"),C=rel(document.getElementById("cp"),bz);
 dib(linea(F.x+F.w+2,cy(F),C.x+C.w/2-34,cy(F)));
-// el "?" del campeon, encerrado
-var cq=rel(document.querySelector(".copa .q"),br);dib(ovalo(cq.x+cq.w/2,cq.y+cq.h/2+2,30,30));
+var cq=rel(document.querySelector("#cp .q"),bz);dib(ovalo(cq.x+cq.w/2,cq.y+cq.h/2+2,30,30));
 
+// achicar para que entre en la pantalla del MOTD (si son muchos equipos)
+function escalar(){
+  var pant=document.getElementById("pE"),wall=br.parentNode,
+      W=wall.clientWidth-48,H=(pant.clientHeight||window.innerHeight)-rel(br,pant).y-14,
+      s=Math.min(1,W/natW,H/natH);
+  if(s<.55)s=.55;  /* mas chico ya no se lee: ahi se baja con la rueda del mouse */
+  var v="scale("+s+")";bz.style.webkitTransform=v;bz.style.transform=v;
+  br.style.width=Math.ceil(natW*s)+"px";br.style.height=Math.ceil(natH*s)+"px";
+}
+escalar();window.addEventListener("resize",escalar);
 }
 function initL(){
 var _s=11;function rnd(){_s=(_s*16807)%2147483647;return (_s-1)/2147483646;}
