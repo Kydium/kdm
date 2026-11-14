@@ -57,24 +57,35 @@ body{overflow:hidden}
 .vacio{font-family:'Mano';font-size:22px;margin:14px 8px}
 .wall2{max-width:720px;margin:0 auto;padding:52px 24px 20px}
 .fila,.tt,.ts,.upd,.vacio{color:#f4f1e8;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
-</style></head><body><div id="deck"><div class="pant" id="p1"><div class="wall"><div class="nav"><a href="./">comandos y top</a><a href="torneo_eliminatoria.html">eliminatoria</a><a href="torneo_puntos.html" class="aqui">liga</a></div>
-<div class="tit">LIGA CAMPESTRE</div> <div class="hint">fecha 5 de 7</div>
-<div class="sub">TODOS CONTRA TODOS &middot; GANAR = 3 PTS &middot; PASAN LOS 2 PRIMEROS A LA FINAL</div>
+</style></head><body>
+<script>/*DATOS*/var LIGA={
+ "titulo": "PROXIMAMENTE",
+ "nota": "",
+ "descripcion": "",
+ "pasan": 1,
+ "puntos_victoria": 1,
+ "equipos": [],
+ "resultados": [],
+ "proxima": [],
+ "nota_abajo": ""
+};/*FIN DATOS*/</script>
+<div id="deck"><div class="pant" id="p1"><div class="wall"><div class="nav"><a href="./">comandos y top</a><a href="torneo_eliminatoria.html">eliminatoria</a><a href="torneo_puntos.html" class="aqui">liga</a></div>
+<div class="tit" id="d_tit"></div> <div class="hint" id="d_nota"></div>
+<div class="sub" id="d_desc"></div>
 <div class="lay" id="lay"><svg class="lin" id="lin"><defs><filter id="tiza" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3" result="r"/><feDisplacementMap in="SourceGraphic" in2="r" scale="2.6"/></filter></defs></svg><div>
-<table class="lg"><tr><th class="l">#</th><th class="l">EQUIPO</th><th>PJ</th><th>G</th><th>P</th><th>PTS CAMP.</th><th>DIF</th><th>PTS</th></tr>
-<tr class="top"><td class="po">1.</td><td class="nm"><span class="tx">Los Sobrevivientes</span></td><td>5</td><td>4</td><td>1</td><td class="sm">3120</td><td class="sm">+710</td><td class="pt">12</td></tr><tr class="top"><td class="po">2.</td><td class="nm"><span class="tx">Medkit Gang</span></td><td>5</td><td>4</td><td>1</td><td class="sm">2980</td><td class="sm">+430</td><td class="pt">12</td></tr><tr class=""><td class="po">3.</td><td class="nm"><span class="tx">ElPanas</span></td><td>5</td><td>3</td><td>2</td><td class="sm">2765</td><td class="sm">+75</td><td class="pt">9</td></tr><tr class=""><td class="po">4.</td><td class="nm"><span class="tx">Los Pibes</span></td><td>5</td><td>2</td><td>3</td><td class="sm">2510</td><td class="sm">-190</td><td class="pt">6</td></tr><tr class=""><td class="po">5.</td><td class="nm"><span class="tx">Rata Squad</span></td><td>5</td><td>1</td><td>4</td><td class="sm">2290</td><td class="sm">-615</td><td class="pt">3</td></tr><tr class=""><td class="po">6.</td><td class="nm"><span class="tx">Team Tank</span></td><td>5</td><td>1</td><td>4</td><td class="sm">2200</td><td class="sm">-810</td><td class="pt">3</td></tr></table>
+<table class="lg" id="tabla"></table>
 <div class="ley">PJ jugados &middot; G ganados &middot; P perdidos &middot; PTS CAMP. puntos de campaña a favor<br>DIF puntos a favor menos en contra (desempate)</div>
 </div><div class="pasan" id="pasan">&larr; pasan</div><div class="side">
 <div class="st">PROXIMA FECHA</div>
-<div class="jm"><span>Los Sobrevivientes</span> <i>vs</i> <span>Medkit Gang</span></div><div class="jm"><span>ElPanas</span> <i>vs</i> <span>Los Pibes</span></div><div class="jm"><span>Rata Squad</span> <i>vs</i> <span>Team Tank</span></div>
-<div class="fz">empate en puntos: gana el que tenga mas DIF. si siguen iguales, el que gano entre ellos.</div>
+<div id="prox"></div>
+<div class="fz" id="d_abajo"></div>
 </div></div>
 </div>
 <span class="fl" onclick="ir('p2')" title="Top 10"><svg width="40" height="46" viewBox="0 0 64 74"><path d="M33 4 C 29 18, 36 33, 31 57" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M11 39 Q 22 50 31 64 Q 41 49 53 37" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
 <div class="pant" id="p2"><span class="fl up" onclick="ir('p1')" title="Volver"><svg width="40" height="46" viewBox="0 0 64 74"><path d="M33 4 C 29 18, 36 33, 31 57" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M11 39 Q 22 50 31 64 Q 41 49 53 37" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="wall2">
 <span class="tt">TOP 10</span><span class="ts">los que mas SR tienen</span>
 <div id="lista"><div class="fila r1"><span class="fp">1.</span><span class="fn">$Rc_hard</span><span class="fs">585<small>SR</small></span><span class="fw"><b>3W</b> &middot; <i>1L</i></span></div><div class="fila r2"><span class="fp">2.</span><span class="fn">LELORE</span><span class="fs">580<small>SR</small></span><span class="fw"><b>4W</b> &middot; <i>2L</i></span></div><div class="fila r3"><span class="fp">3.</span><span class="fn">LINK</span><span class="fs">573<small>SR</small></span><span class="fw"><b>10W</b> &middot; <i>4L</i></span></div><div class="fila"><span class="fp">4.</span><span class="fn">MAZETA</span><span class="fs">548<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">5.</span><span class="fn">™DanFor (:</span><span class="fs">547<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">6.</span><span class="fn">Slein</span><span class="fs">546<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">7.</span><span class="fn">tdioscaqui</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">8.</span><span class="fn">TOPO GIGIO</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">9.</span><span class="fn">CAPITAN PE</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">10.</span><span class="fn">Sxntanna</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div></div>
-<div class="upd">actualizado 14/11/2026 01:17</div>
+<div class="upd">actualizado 14/11/2026 01:21</div>
 </div></div></div>
 <script>
 function ir(id){
@@ -98,6 +109,30 @@ function tacha(x1,y,x2){var d="M"+x1+" "+(y+j(1.5)),n=Math.round((x2-x1)/14),k;f
 function svgCapa(id){var s=document.getElementById(id),NS="http://www.w3.org/2000/svg";return function(d,cls,st){var p=document.createElementNS(NS,"path");p.setAttribute("d",d);if(cls)p.setAttribute("class",cls);if(st)p.setAttribute("style",st);s.appendChild(p);};}
 function rel(el,base){var a=el.getBoundingClientRect(),b=base.getBoundingClientRect();return {x:a.left-b.left,y:a.top-b.top,w:a.width,h:a.height};}
 
+// ---- arma la tabla con los DATOS (arriba) ----
+function esc(t){return String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+(function(){
+  var L=LIGA,P=L.puntos_victoria||3,st={},k,i;
+  for(k=0;k<L.equipos.length;k++)st[L.equipos[k]]={n:L.equipos[k],pj:0,g:0,p:0,af:0,ec:0};
+  for(k=0;k<L.resultados.length;k++){var r=L.resultados[k],a=st[r[0]],b=st[r[2]],pa=parseInt(r[1],10),pb=parseInt(r[3],10);
+    if(!a||!b||isNaN(pa)||isNaN(pb))continue;
+    a.pj++;b.pj++;a.af+=pa;a.ec+=pb;b.af+=pb;b.ec+=pa;
+    if(pa>pb){a.g++;b.p++;}else if(pb>pa){b.g++;a.p++;}}
+  var t=[];for(k in st)t.push(st[k]);
+  t.sort(function(x,y){return (y.g*P-x.g*P)||((y.af-y.ec)-(x.af-x.ec))||(y.af-x.af);});
+  var h='<tr><th class="l">#</th><th class="l">EQUIPO</th><th>PJ</th><th>G</th><th>P</th><th>PTS CAMP.</th><th>DIF</th><th>PTS</th></tr>';
+  for(i=0;i<t.length;i++){var e=t[i],d=e.af-e.ec;
+    h+='<tr'+(i<L.pasan?' class="top"':'')+'><td class="po">'+(i+1)+'.</td><td class="nm"><span class="tx">'+esc(e.n)+'</span></td><td>'+e.pj+'</td><td>'+e.g+'</td><td>'+e.p+'</td><td class="sm">'+e.af+'</td><td class="sm">'+(d>0?"+":"")+d+'</td><td class="pt">'+(e.g*P)+'</td></tr>';}
+  document.getElementById("tabla").innerHTML=h;
+  var j="";for(k=0;k<(L.proxima||[]).length;k++)j+='<div class="jm"><span>'+esc(L.proxima[k][0])+'</span> <i>vs</i> <span>'+esc(L.proxima[k][1])+'</span></div>';
+  document.getElementById("prox").innerHTML=j||'<div class="jm">-</div>';
+  document.getElementById("d_tit").innerHTML=esc(L.titulo);
+  document.getElementById("d_nota").innerHTML=esc(L.nota);
+  document.getElementById("d_desc").innerHTML=esc(L.descripcion);
+  document.getElementById("d_abajo").innerHTML=esc(L.nota_abajo);
+})();
+var PASAN=Math.max(1,Math.min(LIGA.pasan||2,LIGA.equipos.length-1));
+
 var lay=document.getElementById("lay"),dib=svgCapa("lin"),k;
 var tb=rel(document.querySelector(".lg"),lay),trs=document.querySelectorAll(".lg tr");
 // raya bajo los titulos
@@ -105,11 +140,11 @@ var th=rel(trs[0],lay);dib(linea(tb.x,th.y+th.h,tb.x+tb.w,th.y+th.h+2,1.4));
 // rayitas suaves entre filas
 for(k=1;k<trs.length-1;k++){var r=rel(trs[k],lay);dib(linea(tb.x+40,r.y+r.h+1,tb.x+tb.w-10,r.y+r.h+1,1),"fino","opacity:.25");}
 // corte: pasan los 2 primeros (punteado a mano) + flechita
-var c=rel(trs[2],lay),yy=c.y+c.h+2,i,dd="";
+var c=rel(trs[PASAN],lay),yy=c.y+c.h+2,i,dd="";
 for(i=tb.x;i<tb.x+tb.w;i+=20)dd+=linea(i,yy,i+11,yy,1);
 dib(dd);
 // los 2 que pasan: subrayado a mano del nombre y circulo en sus puntos
-for(k=1;k<=2;k++){var nm=rel(trs[k].querySelector(".nm"),lay),pt=rel(trs[k].querySelector(".pt"),lay);
+for(k=1;k<=PASAN;k++){var nm=rel(trs[k].querySelector(".nm"),lay),pt=rel(trs[k].querySelector(".pt"),lay);
   var tx=rel(trs[k].querySelector(".nm .tx"),lay);
   dib(linea(tx.x,tx.y+tx.h-3,tx.x+tx.w+4,tx.y+tx.h-1,1.2),"fino");
   dib(ovalo(pt.x+pt.w-15,pt.y+pt.h/2+2,20,14),"fino");}

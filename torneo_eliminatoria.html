@@ -56,21 +56,81 @@ body{overflow:hidden}
 .vacio{font-family:'Mano';font-size:22px;margin:14px 8px}
 .wall2{max-width:720px;margin:0 auto;padding:52px 24px 20px}
 .fila,.tt,.ts,.upd,.vacio{color:#f4f1e8;text-shadow:0 0 3px rgba(0,0,0,.85),1px 2px 0 rgba(0,0,0,.6)}
-</style></head><body><div id="deck"><div class="pant" id="p1"><div class="wall"><div class="nav"><a href="./">comandos y top</a><a href="torneo_eliminatoria.html" class="aqui">eliminatoria</a><a href="torneo_puntos.html">liga</a></div>
-<div class="tit">TORNEO CAMPESTRE</div> <div class="hint">copa de invierno</div>
-<div class="sub">ELIMINATORIA &middot; 8 EQUIPOS &middot; GANA EL QUE SUMA MAS PUNTOS EN LA CAMPAÑA</div>
+</style></head><body>
+<script>/*DATOS*/var TORNEO={
+ "titulo": "PROXIMAMENTE",
+ "nota": "",
+ "descripcion": "",
+ "cuartos": [
+  [
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "",
+   "",
+   "",
+   "",
+   ""
+  ]
+ ],
+ "semis": [
+  [
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "",
+   "",
+   "",
+   "",
+   ""
+  ]
+ ],
+ "final": [
+  "",
+  "",
+  "",
+  "",
+  ""
+ ],
+ "campeon": ""
+};/*FIN DATOS*/</script>
+<div id="deck"><div class="pant" id="p1"><div class="wall"><div class="nav"><a href="./">comandos y top</a><a href="torneo_eliminatoria.html" class="aqui">eliminatoria</a><a href="torneo_puntos.html">liga</a></div>
+<div class="tit" id="d_tit"></div> <div class="hint" id="d_nota"></div>
+<div class="sub" id="d_desc"></div>
 <div class="br" id="br">
 <svg class="lin" id="lin"><defs><filter id="tiza" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3" result="r"/><feDisplacementMap in="SourceGraphic" in2="r" scale="2.6"/></filter></defs></svg>
-<div class="colb c1"><div class="ct">CUARTOS</div><div class="m" id="q0"><div class="eq gana"><span class="en"><span class="tx">Los Sobrevivientes</span></span><span class="es">612</span></div><div class="eq pierde"><span class="en"><span class="tx">Rata Squad</span></span><span class="es">488</span></div></div><div class="m" id="q1"><div class="eq pierde"><span class="en"><span class="tx">Team Tank</span></span><span class="es">530</span></div><div class="eq gana"><span class="en"><span class="tx">Los Pibes</span></span><span class="es">541</span></div></div><div class="m" id="q2"><div class="eq gana"><span class="en"><span class="tx">ElPanas</span></span><span class="es">702</span></div><div class="eq pierde"><span class="en"><span class="tx">Zombi Killers</span></span><span class="es">455</span></div></div><div class="m" id="q3"><div class="eq pierde"><span class="en"><span class="tx">Campestre B</span></span><span class="es">399</span></div><div class="eq gana"><span class="en"><span class="tx">Medkit Gang</span></span><span class="es">610</span></div></div></div>
-<div class="colb c2"><div class="ct">SEMIFINAL</div><div class="m" id="s0"><div class="eq gana"><span class="en"><span class="tx">Los Sobrevivientes</span></span><span class="es">655</span></div><div class="eq pierde"><span class="en"><span class="tx">Los Pibes</span></span><span class="es">590</span></div></div><div class="m" id="s1"><div class="eq pierde"><span class="en"><span class="tx">ElPanas</span></span><span class="es">520</span></div><div class="eq gana"><span class="en"><span class="tx">Medkit Gang</span></span><span class="es">577</span></div></div></div>
-<div class="colb c3"><div class="ct">FINAL</div><div class="m pend" id="f0"><div class="eq"><span class="en"><span class="tx">Los Sobrevivientes</span></span><span class="es">-</span></div><div class="eq"><span class="en"><span class="tx">Medkit Gang</span></span><span class="es">-</span></div><div class="nota">sab 21:00</div></div></div>
-<div class="colb c4"><div class="ct">CAMPEON</div><div class="copa" id="cp"><div class="q">?</div><div class="cn">POR DEFINIR</div><div class="cs">final: sab 21:00</div></div></div>
+<div class="colb c1"><div class="ct">CUARTOS</div><div id="col_q"></div></div>
+<div class="colb c2"><div class="ct">SEMIFINAL</div><div id="col_s"></div></div>
+<div class="colb c3"><div class="ct">FINAL</div><div id="col_f"></div></div>
+<div class="colb c4"><div class="ct">CAMPEON</div><div class="copa" id="cp"></div></div>
 </div></div>
 <span class="fl" onclick="ir('p2')" title="Top 10"><svg width="40" height="46" viewBox="0 0 64 74"><path d="M33 4 C 29 18, 36 33, 31 57" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M11 39 Q 22 50 31 64 Q 41 49 53 37" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
 <div class="pant" id="p2"><span class="fl up" onclick="ir('p1')" title="Volver"><svg width="40" height="46" viewBox="0 0 64 74"><path d="M33 4 C 29 18, 36 33, 31 57" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M11 39 Q 22 50 31 64 Q 41 49 53 37" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="wall2">
 <span class="tt">TOP 10</span><span class="ts">los que mas SR tienen</span>
 <div id="lista"><div class="fila r1"><span class="fp">1.</span><span class="fn">$Rc_hard</span><span class="fs">585<small>SR</small></span><span class="fw"><b>3W</b> &middot; <i>1L</i></span></div><div class="fila r2"><span class="fp">2.</span><span class="fn">LELORE</span><span class="fs">580<small>SR</small></span><span class="fw"><b>4W</b> &middot; <i>2L</i></span></div><div class="fila r3"><span class="fp">3.</span><span class="fn">LINK</span><span class="fs">573<small>SR</small></span><span class="fw"><b>10W</b> &middot; <i>4L</i></span></div><div class="fila"><span class="fp">4.</span><span class="fn">MAZETA</span><span class="fs">548<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">5.</span><span class="fn">™DanFor (:</span><span class="fs">547<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">6.</span><span class="fn">Slein</span><span class="fs">546<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">7.</span><span class="fn">tdioscaqui</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">8.</span><span class="fn">TOPO GIGIO</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">9.</span><span class="fn">CAPITAN PE</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div><div class="fila"><span class="fp">10.</span><span class="fn">Sxntanna</span><span class="fs">540<small>SR</small></span><span class="fw"><b>1W</b> &middot; <i>0L</i></span></div></div>
-<div class="upd">actualizado 14/11/2026 01:17</div>
+<div class="upd">actualizado 14/11/2026 01:21</div>
 </div></div></div>
 <script>
 function ir(id){
@@ -78,6 +138,33 @@ function ir(id){
   d.style.webkitTransform=v;d.style.transform=v;
 }
 window.onresize=function(){var d=document.getElementById("deck");if(d.style.transform&&d.style.transform.indexOf("-")>0)ir("p2");};
+
+// ---- arma el bracket con los DATOS (arriba) ----
+function esc(t){return String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function num(v){return (v===""||v==null||isNaN(parseInt(v,10)))?null:parseInt(v,10);}
+function ganador(p){var a=num(p[1]),b=num(p[3]);if(a==null||b==null||a==b)return "";return a>b?p[0]:p[2];}
+function partido(p,id){
+  var a=num(p[1]),b=num(p[3]),jugado=(a!=null&&b!=null),wa=jugado&&a>b,wb=jugado&&b>a,h="";
+  function eq(n,pt,gana,pierde){return '<div class="eq'+(gana?" gana":"")+(pierde?" pierde":"")+'"><span class="en"><span class="tx">'+(esc(n)||"&nbsp;")+'</span></span><span class="es">'+(pt==null?"-":pt)+'</span></div>';}
+  h+=eq(p[0],a,wa,wb)+eq(p[2],b,wb,wa);
+  if(!jugado&&p[4])h+='<div class="nota">'+esc(p[4])+'</div>';
+  return '<div class="m'+(jugado?"":" pend")+'" id="'+id+'">'+h+'</div>';
+}
+(function(){
+  var T=TORNEO,k,hq="",hs="";
+  document.getElementById("d_tit").innerHTML=esc(T.titulo);
+  document.getElementById("d_nota").innerHTML=esc(T.nota);
+  document.getElementById("d_desc").innerHTML=esc(T.descripcion);
+  for(k=0;k<4;k++)hq+=partido(T.cuartos[k],"q"+k);
+  for(k=0;k<2;k++){var s=T.semis[k].slice();if(!s[0])s[0]=ganador(T.cuartos[2*k]);if(!s[2])s[2]=ganador(T.cuartos[2*k+1]);T.semis[k]=s;hs+=partido(s,"s"+k);}
+  var f=T.final.slice();if(!f[0])f[0]=ganador(T.semis[0]);if(!f[2])f[2]=ganador(T.semis[1]);
+  document.getElementById("col_q").innerHTML=hq;
+  document.getElementById("col_s").innerHTML=hs;
+  document.getElementById("col_f").innerHTML=partido(f,"f0");
+  var c=T.campeon||ganador(f);
+  document.getElementById("cp").innerHTML=c?'<div class="q">&#9733;</div><div class="cn">'+esc(c)+'</div><div class="cs">campeon</div>'
+                                           :'<div class="q">?</div><div class="cn">POR DEFINIR</div><div class="cs">'+(f[4]?"final: "+esc(f[4]):"")+'</div>';
+})();
 
 // posiciones verticales de los partidos (cada ronda centrada entre sus 2 partidos anteriores)
 var H=370,top0=26,alto=56;
