@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 """
 watcher.py - Web Watcher (ranking SR -> GitHub Pages)
-Monitorea sr_index.html (generado por el plugin dentro de SourceMod/data)
-y cuando cambia lo copia a la carpeta E:\\L4D2SVR\\kdm\\ (repo de GitHub Pages) y hace git push.
+Monitorea data/sr_web_out/ (paginas que genera el plugin SR con el Top 10)
+y cuando cambian las copia a E:\\L4D2SVR\\kdm\\ (repo de GitHub Pages) y hace git push.
 Link: https://kydium.github.io/kdm/
 
 Ademas sirve la carpeta kdm/ por HTTP (sin https) en el puerto WEB_PUERTO,
@@ -21,29 +21,17 @@ from pathlib import Path
 from datetime import datetime
 
 # ─── CONFIGURACION ────────────────────────────────────────────────────────────
-# Archivo generado por el plugin (dentro de SourceMod, siempre accesible)
-# Ranking que genera el plugin: juego (Steam) y servidor dedicado. Se sube el mas reciente.
-SM_INDEX_RUTAS = [
-    Path(r"E:\Steam\steamapps\common\Left 4 Dead 2\left4dead2\addons\sourcemod\data\sr_index.html"),
-    Path(r"E:\L4D2SVR\left4dead2\addons\sourcemod\data\sr_index.html"),
-]
-
-
-def sm_index():
-    existentes = [p for p in SM_INDEX_RUTAS if p.exists()]
-    if not existentes:
-        return SM_INDEX_RUTAS[0]
-    return max(existentes, key=lambda p: p.stat().st_mtime)
-
+# Paginas que genera el plugin SR en el juego de Steam (host local).
+# Cada .html de esa carpeta se copia tal cual a kdm/ y se sube a GitHub.
+WEB_OUT     = Path(r"E:\Steam\steamapps\common\Left 4 Dead 2\left4dead2\addons\sourcemod\data\sr_web_out")
 
 # Destino: repo de GitHub Pages
 REPO_DIR    = Path(r"E:\L4D2SVR\kdm")
-INDEX_HTML  = REPO_DIR / "index.html"
 LOG_FILE    = REPO_DIR / "logs" / "web_updater.log"
-GIT_MSG     = "auto: actualizar ranking y partidas"
+GIT_MSG     = "auto: actualizar paginas (top 10)"
 POLL_SECS   = 3
 
-# Servidor web para el MOTD (0 = apagado)
+# Servidor web local (0 = apagado; ya no se usa)
 WEB_PUERTO  = 0
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -75,8 +63,9 @@ def git(args):
     return True
 
 
-def git_push():
-    git(["add", "index.html"])
+def git_push(nombres):
+    for n in nombres:
+        git(["add", n])
     ok = git(["commit", "-m", GIT_MSG])
     if not ok:
         log("Sin cambios nuevos.")
@@ -89,11 +78,24 @@ def git_push():
         log("No se pudo hacer push (revisa el log de arriba).")
 
 
-def copiar_y_subir(motivo):
-    log(f"{motivo}. Copiando a kdm/...")
-    shutil.copy2(sm_index(), INDEX_HTML)
-    log(f"Copiado OK ({INDEX_HTML.stat().st_size} bytes). Haciendo git push...")
-    git_push()
+def sincronizar(motivo):
+    """Copia a kdm/ las paginas que cambiaron. Devuelve la lista copiada."""
+    if not WEB_OUT.exists():
+        return []
+    copiadas = []
+    for src in sorted(WEB_OUT.glob("*.html")):
+        dst = REPO_DIR / src.name
+        try:
+            if dst.exists() and dst.read_bytes() == src.read_bytes():
+                continue
+            shutil.copy2(src, dst)
+            copiadas.append(src.name)
+        except Exception as e:
+            log(f"No se pudo copiar {src.name}: {e}")
+    if copiadas:
+        log(f"{motivo}: {', '.join(copiadas)}. Haciendo git push...")
+        git_push(copiadas)
+    return copiadas
 
 
 class MotdHandler(SimpleHTTPRequestHandler):
@@ -128,36 +130,35 @@ def iniciar_web():
     log(f"Servidor web del MOTD: http://127.0.0.1:{WEB_PUERTO}/comandos.html")
 
 
+def firma():
+    """Fechas de modificacion de las paginas generadas (para notar cambios)."""
+    if not WEB_OUT.exists():
+        return ()
+    return tuple((p.name, p.stat().st_mtime) for p in sorted(WEB_OUT.glob("*.html")))
+
+
 def main():
-    log(f"Watcher iniciado.")
+    log("Watcher iniciado.")
     iniciar_web()
-    for r in SM_INDEX_RUTAS:
-        log(f"Monitoreando: {r}")
-    log(f"Destino:      {INDEX_HTML}")
+    log(f"Monitoreando: {WEB_OUT}")
+    log(f"Destino:      {REPO_DIR}")
 
-    SM_INDEX = sm_index()
-    prev_mtime = SM_INDEX.stat().st_mtime if SM_INDEX.exists() else 0.0
-
-    # Al arrancar: si ya hay un ranking generado y no esta en kdm/ (o es distinto), subirlo
+    # Al arrancar: subir lo que este pendiente
     try:
-        if SM_INDEX.exists():
-            distinto = (not INDEX_HTML.exists()) or (SM_INDEX.read_bytes() != INDEX_HTML.read_bytes())
-            if distinto:
-                copiar_y_subir("Ranking pendiente al iniciar")
+        sincronizar("Pendiente al iniciar")
     except Exception as e:
         log(f"Error al iniciar: {e}")
 
+    prev = firma()
     while True:
         try:
-            SM_INDEX = sm_index()
-            if SM_INDEX.exists():
-                curr_mtime = SM_INDEX.stat().st_mtime
-                if curr_mtime > prev_mtime:
-                    prev_mtime = curr_mtime
-                    copiar_y_subir("sr_index.html actualizado")
+            ahora = firma()
+            if ahora != prev:
+                prev = ahora
+                time.sleep(1)   # que el plugin termine de escribir
+                sincronizar("Paginas actualizadas")
         except Exception as e:
             log(f"Error: {e}")
-
         time.sleep(POLL_SECS)
 
 
